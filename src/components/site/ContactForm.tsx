@@ -8,7 +8,7 @@ const field = "mt-2 w-full rounded-xl border border-input bg-background px-4 py-
 
 export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Partial<Record<"name" | "email" | "project_type" | "message", string>>>({});
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -16,9 +16,9 @@ export function ContactSection() {
     const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
     const parsed = contactSchema.safeParse(data);
     if (!parsed.success) {
-      const errs: Record<string, string> = {};
+      const errs: Record<string, string> = {} as Record<string, string>;
       parsed.error.issues.forEach((i) => (errs[String(i.path[0])] = i.message));
-      setErrors(errs);
+      setErrors(errs as never);
       return;
     }
     setErrors({});
