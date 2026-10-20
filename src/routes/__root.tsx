@@ -12,6 +12,10 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { MessageCircle } from "lucide-react";
+import { Header } from "@/components/site/Header";
+import { Footer } from "@/components/site/Footer";
+import { LINKS } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -73,27 +77,38 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Gnanha W. Cadorelle — Création de sites web",
+  description: "Création de sites web premium, branding et UX/UI design.",
+  email: "waldellecadorelle@gmail.com",
+  telephone: "+2290142554256",
+  address: { "@type": "PostalAddress", addressLocality: "Bohicon", addressCountry: "BJ" },
+  areaServed: "Bénin",
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Gnanha W. Cadorelle — Créatrice de sites web" },
+      { name: "description", content: "Création de sites web premium à Bohicon, Bénin." },
+      { name: "author", content: "Gnanha W. Cadorelle" },
+      { name: "theme-color", content: "#141210" },
+      { property: "og:site_name", content: "Cadorelle W." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -103,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>
@@ -120,8 +135,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground">Aller au contenu</a>
+      <Header />
+      <main id="main">
+        <Outlet />
+      </main>
+      <Footer />
+      <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Discuter sur WhatsApp" className="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-[var(--shadow-gold)] transition hover:scale-105">
+        <MessageCircle className="h-6 w-6" />
+      </a>
     </QueryClientProvider>
   );
 }

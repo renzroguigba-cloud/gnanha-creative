@@ -33,7 +33,7 @@ export function Header() {
           <ul className="flex items-center gap-7">
             {NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to} activeOptions={{ exact: true }} className="relative py-2 text-sm text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-primary" activeProps={{ "data-status": "active" } as never}>
+                <Link to={n.to} activeOptions={{ exact: true }} className="relative py-2 text-sm text-muted-foreground transition-colors hover:text-foreground" activeProps={{ className: "text-primary" }}>
                   {n.label}
                 </Link>
               </li>
