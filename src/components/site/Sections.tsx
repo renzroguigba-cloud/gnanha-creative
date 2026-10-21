@@ -1,10 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Check, Quote, Star } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import portrait from "@/assets/cadorelle.jpg.asset.json";
-import { FAQS, LINKS, PLANS, PROJECTS, SERVICES, SITE, STATS, TESTIMONIALS } from "@/lib/site";
+import { FAQS, LINKS, PLANS, PROJECTS, SERVICES, SITE, STATS } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
+export { TestimonialsSection } from "./SocialTestimonials";
 
 export function PageHero({ eyebrow, title, desc }: { eyebrow: string; title: string; desc: string }) {
   return (
@@ -104,48 +106,23 @@ export function PortfolioSection({ limit }: { limit?: number }) {
   return (
     <section className="py-20 md:py-28" aria-labelledby="portfolio-title">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionHeading eyebrow="Réalisations" title="Des projets qui font la différence" desc="Une sélection de sites et d'identités créés pour des clients exigeants." />
+        <SectionHeading eyebrow="Portfolio" title="Mes réalisation" />
         <div className={cn("mt-14 grid gap-6 sm:grid-cols-2", list.length === 3 && "lg:grid-cols-3")}>
           {list.map((p, i) => (
             <Reveal key={p.title} delay={i * 90}>
               <article className="card-lux group h-full overflow-hidden">
                 <div className="overflow-hidden">
-                  <img src={p.img} alt={`Projet ${p.title}`} width={1200} height={912} loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" />
+                  <a href={p.url} target="_blank" rel="noopener noreferrer" aria-label={`Visiter le site ${p.title}`}>
+                    <img src={p.img} alt={`Aperçu du site ${p.title}`} width={1280} height={850} loading="lazy" className="aspect-[1280/850] w-full object-cover transition duration-700 group-hover:scale-105" />
+                  </a>
                 </div>
                 <div className="p-6">
                   <p className="eyebrow !text-[0.68rem]">{p.category}</p>
                   <h3 className="mt-2 text-2xl text-foreground">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
-                  <Link to="/contact" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">Voir le projet <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
+                  <Button asChild variant="link" className="mt-5 h-auto px-0"><a href={p.url} target="_blank" rel="noopener noreferrer">Voir le site <ArrowUpRight className="h-4 w-4" /></a></Button>
                 </div>
               </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function TestimonialsSection() {
-  return (
-    <section className="bg-surface py-20 md:py-28" aria-labelledby="testi-title">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionHeading eyebrow="Témoignages" title="Ils m'ont fait confiance" />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {TESTIMONIALS.map((t, i) => (
-            <Reveal key={t.name} delay={i * 90}>
-              <figure className="card-lux flex h-full flex-col p-7">
-                <Quote className="h-8 w-8 text-primary/60" aria-hidden />
-                <div className="mt-4 flex gap-1" aria-label={`Note : ${t.rating} sur 5`}>
-                  {Array.from({ length: t.rating }).map((_, k) => <Star key={k} className="h-4 w-4 fill-primary text-primary" aria-hidden />)}
-                </div>
-                <blockquote className="mt-4 flex-1 leading-relaxed text-foreground/90">« {t.text} »</blockquote>
-                <figcaption className="mt-6 border-t border-border pt-4">
-                  <p className="font-display text-lg text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}, {t.company}</p>
-                </figcaption>
-              </figure>
             </Reveal>
           ))}
         </div>

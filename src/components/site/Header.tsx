@@ -30,7 +30,7 @@ export function Header() {
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <Logo />
         <nav aria-label="Navigation principale" className="hidden lg:block">
-          <ul className="flex items-center gap-7">
+          <ul className="flex items-center gap-4 xl:gap-6">
             {NAV.map((n) => (
               <li key={n.to}>
                 <Link to={n.to} activeOptions={{ exact: true }} className="relative py-2 text-sm text-muted-foreground transition-colors hover:text-foreground" activeProps={{ className: "text-primary" }}>

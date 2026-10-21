@@ -74,7 +74,7 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0; }
   :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
 }
 
@@ -121,6 +121,10 @@
 
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
+.hero-shade { background: linear-gradient(90deg, var(--background) 0%, color-mix(in oklab, var(--background) 92%, transparent) 40%, color-mix(in oklab, var(--background) 20%, transparent) 100%); }
+@media (max-width: 767px) {
+  .hero-shade { background: linear-gradient(180deg, color-mix(in oklab, var(--background) 80%, transparent), color-mix(in oklab, var(--background) 92%, transparent)); }
+}
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
