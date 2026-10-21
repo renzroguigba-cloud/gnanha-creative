@@ -17,6 +17,7 @@ import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as RealisationsRouteImport } from './routes/realisations'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TarifsRouteImport } from './routes/tarifs'
+import { Route as TemoignagesRouteImport } from './routes/temoignages'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +59,11 @@ const TarifsRoute = TarifsRouteImport.update({
   path: '/tarifs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TemoignagesRoute = TemoignagesRouteImport.update({
+  id: '/temoignages',
+  path: '/temoignages',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/realisations': typeof RealisationsRoute
   '/services': typeof ServicesRoute
   '/tarifs': typeof TarifsRoute
+  '/temoignages': typeof TemoignagesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/realisations': typeof RealisationsRoute
   '/services': typeof ServicesRoute
   '/tarifs': typeof TarifsRoute
+  '/temoignages': typeof TemoignagesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/realisations': typeof RealisationsRoute
   '/services': typeof ServicesRoute
   '/tarifs': typeof TarifsRoute
+  '/temoignages': typeof TemoignagesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/realisations'
     | '/services'
     | '/tarifs'
+    | '/temoignages'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/realisations'
     | '/services'
     | '/tarifs'
+    | '/temoignages'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/realisations'
     | '/services'
     | '/tarifs'
+    | '/temoignages'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,6 +144,7 @@ export interface RootRouteChildren {
   RealisationsRoute: typeof RealisationsRoute
   ServicesRoute: typeof ServicesRoute
   TarifsRoute: typeof TarifsRoute
+  TemoignagesRoute: typeof TemoignagesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -192,6 +205,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TarifsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/temoignages': {
+      id: '/temoignages'
+      path: '/temoignages'
+      fullPath: '/temoignages'
+      preLoaderRoute: typeof TemoignagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   RealisationsRoute: RealisationsRoute,
   ServicesRoute: ServicesRoute,
   TarifsRoute: TarifsRoute,
+  TemoignagesRoute: TemoignagesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
