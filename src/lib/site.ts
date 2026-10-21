@@ -1,8 +1,9 @@
 import { Palette, MonitorSmartphone, Code2, Megaphone, LayoutTemplate, Wrench } from "lucide-react";
-import p1 from "@/assets/project-1.jpg";
-import p2 from "@/assets/project-2.jpg";
-import p3 from "@/assets/project-3.jpg";
-import mockup from "@/assets/hero-mockup.jpg";
+import lumia from "@/assets/realisation-lumia.jpg.asset.json";
+import sagesse from "@/assets/realisation-sagesse.jpg.asset.json";
+import genie from "@/assets/realisation-genie.jpg.asset.json";
+import warren from "@/assets/realisation-warren.jpg.asset.json";
+import paradise from "@/assets/realisation-paradise.jpg.asset.json";
 
 export const SITE = {
   brand: "Cadorelle W.",
@@ -27,6 +28,7 @@ export const NAV = [
   { to: "/services", label: "Services" },
   { to: "/a-propos", label: "À propos" },
   { to: "/realisations", label: "Réalisations" },
+  { to: "/temoignages", label: "Témoignages" },
   { to: "/tarifs", label: "Tarifs" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
@@ -42,16 +44,11 @@ export const SERVICES = [
 ];
 
 export const PROJECTS = [
-  { img: p1, title: "La Belle Table", category: "Restaurant · Site vitrine", desc: "Un site raffiné avec menu interactif et réservation en ligne pour un restaurant gastronomique." },
-  { img: p2, title: "Zawadi Fashion", category: "Mode · E-commerce", desc: "Une boutique en ligne qui célèbre la mode africaine, avec paiement mobile intégré." },
-  { img: p3, title: "Velmora", category: "Branding · Identité", desc: "Identité complète et application mobile pour une marque d'hébergement haut de gamme." },
-  { img: mockup, title: "Studio Velmora", category: "Agence · Site web", desc: "Un site d'agence sombre et doré, pensé pour inspirer confiance dès la première seconde." },
-];
-
-export const TESTIMONIALS = [
-  { name: "Arnaud K.", role: "Gérant", company: "La Belle Table", text: "Cadorelle a parfaitement saisi l'esprit de notre restaurant. Les réservations en ligne ont doublé en deux mois.", rating: 5 },
-  { name: "Mireille A.", role: "Fondatrice", company: "Zawadi Fashion", text: "Professionnelle, à l'écoute et très créative. Ma boutique en ligne est exactement ce dont je rêvais.", rating: 5 },
-  { name: "Serge D.", role: "Directeur", company: "Velmora", text: "Un travail précis et élégant, livré dans les délais. Nos clients nous complimentent sur notre nouvelle image.", rating: 5 },
+  { img: lumia.url, title: "LUMÎA Studio", category: "Photographie", desc: "Studio photo : mariages, portraits et photographie corporate.", url: "https://lumia-shooting-portfolio.vercel.app/" },
+  { img: sagesse.url, title: "MemeTon Sagesse", category: "Portfolio · Montage vidéo", desc: "Un portfolio consacré aux Reels, Shorts et TikToks.", url: "https://sagesse-memeton-psi.vercel.app/" },
+  { img: genie.url, title: "CoachVie", category: "Coaching", desc: "Une présence en ligne dédiée au coaching et au développement personnel.", url: "https://genie-s1m3.vercel.app/" },
+  { img: warren.url, title: "Warren Adjovi", category: "Portfolio · Montage vidéo", desc: "Le portfolio d’un monteur vidéo professionnel.", url: "https://warren-adjovi-two.vercel.app/" },
+  { img: paradise.url, title: "Paradise Hotel Abomey", category: "Hôtellerie", desc: "Le site du Paradise Hotel, à Abomey au Bénin.", url: "https://paradise-abomey.lovable.app/" },
 ];
 
 export const PLANS = [
