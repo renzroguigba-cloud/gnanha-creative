@@ -4,9 +4,10 @@ import portrait from "@/assets/cadorelle.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { pageHead, SITE } from "@/lib/site";
 import { Reveal } from "@/components/site/Reveal";
+import { TestimonialsSection } from "@/components/site/SocialTestimonials";
 
 export const Route = createFileRoute("/")({
-  head: () => pageHead("Créatrice de sites web à Bohicon, Bénin", "Gnanha W. Cadorelle crée des sites vitrines, boutiques catalogue avec commande WhatsApp et portfolios pour marques, entrepreneurs et entreprises.", "/"),
+   head: () => pageHead("Créatrice de sites web à Bohicon, Bénin", "Découvrez Gnanha W. Cadorelle, ses sites vitrines, boutiques catalogue WhatsApp et portfolios, ainsi que les témoignages de ses clients.", "/"),
   component: Index,
 });
 
@@ -73,6 +74,7 @@ function Index() {
           </div>
         </div>
       </section>
+      <TestimonialsSection />
     </>
   );
 }
