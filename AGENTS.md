@@ -12,3 +12,4 @@
 - Keep real portfolio links and preview asset pointers in `src/lib/site.ts` so every portfolio view uses the same verified projects.
 - Render client photo/video testimonials through the shared SocialTestimonials component so home and content pages stay consistent; use native video controls without autoplay.
 - Store supplied media and actual website screenshots as Lovable Assets pointers; never copy uploaded binaries into the repository.
+- Keep merged page content at its canonical route and permanently redirect former public URLs to that route to preserve existing links.

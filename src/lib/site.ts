@@ -25,11 +25,9 @@ export const LINKS = {
 
 export const NAV = [
   { to: "/", label: "Accueil" },
-  { to: "/services", label: "Services" },
+  { to: "/services", label: "Services & tarifs" },
   { to: "/a-propos", label: "À propos" },
   { to: "/realisations", label: "Réalisations" },
-  { to: "/temoignages", label: "Témoignages" },
-  { to: "/tarifs", label: "Tarifs" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
 ] as const;

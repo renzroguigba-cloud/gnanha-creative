@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { PROJECTS, SERVICES, STATS } from "@/lib/site";
+import { NAV, PROJECTS, SERVICES, STATS } from "@/lib/site";
 
 describe("Client-supplied portfolio", () => {
   it("contains only the five supplied website destinations", () => {
@@ -14,6 +14,15 @@ describe("Client-supplied portfolio", () => {
 });
 
 describe("Real services and stats", () => {
+  it("combines services and pricing into one navigation destination", () => {
+    expect(NAV.filter((item) => item.to === "/services")).toHaveLength(1);
+    expect(NAV.map((item) => item.to)).not.toContain("/tarifs");
+  });
+
+  it("keeps testimonials with home instead of a separate navigation destination", () => {
+    expect(NAV.map((item) => item.to)).toContain("/");
+    expect(NAV.map((item) => item.to)).not.toContain("/temoignages");
+  });
   it("offers exactly the three services the creator provides", () => {
     expect(SERVICES.map((s) => s.title)).toEqual([
       "Création de site web vitrine",
