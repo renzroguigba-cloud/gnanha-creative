@@ -6,4 +6,4 @@
 - [x] Re-encode testimonial videos (denoise + sharpen + upscale) for better readability.
 - [x] Replace services with the three real ones; remove marketing digital, refonte, boutique en ligne.
 - [x] Update stats to 4 ans, 50+ projets, 95% satisfaction.
-- [ ] Final verification: tests, build, desktop/mobile screenshots.
+- [x] Final verification: tests, build, desktop/mobile screenshots.
