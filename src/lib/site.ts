@@ -1,4 +1,4 @@
-import { Palette, MonitorSmartphone, Code2, Megaphone, LayoutTemplate, Wrench } from "lucide-react";
+import { MonitorSmartphone, ShoppingBag, Briefcase } from "lucide-react";
 import lumia from "@/assets/realisation-lumia.jpg.asset.json";
 import sagesse from "@/assets/realisation-sagesse.jpg.asset.json";
 import genie from "@/assets/realisation-genie.jpg.asset.json";
@@ -35,12 +35,9 @@ export const NAV = [
 ] as const;
 
 export const SERVICES = [
-  { icon: Palette, title: "Branding & Positionnement", desc: "Une identité visuelle cohérente qui reflète vos valeurs et vous distingue durablement.", benefits: ["Logo & charte graphique", "Ton et messages clés", "Image premium"] },
-  { icon: MonitorSmartphone, title: "Design de sites web", desc: "Des maquettes élégantes, pensées pour séduire vos visiteurs et les transformer en clients.", benefits: ["Design sur mesure", "Mobile-first", "Parcours orientés conversion"] },
-  { icon: Code2, title: "Développement web", desc: "Des sites rapides, sécurisés et faciles à faire évoluer, construits avec des technologies modernes.", benefits: ["Performance élevée", "SEO technique", "Code propre"] },
-  { icon: LayoutTemplate, title: "UX/UI design", desc: "Des interfaces claires et intuitives où chaque détail sert l'expérience de vos utilisateurs.", benefits: ["Ergonomie", "Accessibilité", "Prototypes interactifs"] },
-  { icon: Megaphone, title: "Marketing digital", desc: "Visibilité sur Google et les réseaux sociaux pour attirer les bons clients au bon moment.", benefits: ["Référencement", "Réseaux sociaux", "Contenus engageants"] },
-  { icon: Wrench, title: "Maintenance & optimisation", desc: "Votre site reste à jour, sécurisé et performant, pendant que vous vous concentrez sur votre activité.", benefits: ["Mises à jour", "Sauvegardes", "Support réactif"] },
+  { icon: MonitorSmartphone, title: "Création de site web vitrine", desc: "Un site élégant qui présente votre activité, inspire confiance et transforme vos visiteurs en clients.", benefits: ["Design sur mesure et responsive", "Formulaire de contact & WhatsApp", "Référencement de base inclus"] },
+  { icon: ShoppingBag, title: "Boutique catalogue avec commande WhatsApp", desc: "Présentez vos produits dans un catalogue en ligne clair : vos clients commandent directement sur WhatsApp, sans paiement en ligne compliqué.", benefits: ["Catalogue produits organisé", "Commande directe via WhatsApp", "Gestion simple de vos articles"] },
+  { icon: Briefcase, title: "Portfolio pour marques et entrepreneurs", desc: "Un portfolio professionnel qui met en valeur votre travail et votre image, pour marques, entrepreneurs et entreprises.", benefits: ["Mise en valeur de vos réalisations", "Image premium et crédible", "Parcours pensé pour convaincre"] },
 ];
 
 export const PROJECTS = [
@@ -68,10 +65,10 @@ export const FAQS = [
 ];
 
 export const STATS = [
-  { value: "200+", label: "Projets livrés" },
-  { value: "97%", label: "Clients satisfaits" },
-  { value: "9 ans", label: "D'expérience" },
-  { value: "4.9/5", label: "Note moyenne" },
+  { value: "50+", label: "Projets livrés" },
+  { value: "95%", label: "Clients satisfaits" },
+  { value: "4 ans", label: "D'expérience" },
+  { value: "100%", label: "Accompagnement personnalisé" },
 ];
 
 export function pageHead(title: string, description: string, path: string) {

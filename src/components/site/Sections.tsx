@@ -23,7 +23,7 @@ export function ServicesSection({ limit }: { limit?: number }) {
   return (
     <section className="py-20 md:py-28" aria-labelledby="services-title">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionHeading eyebrow="Services" title="Tout pour une présence en ligne remarquable" desc="De l'identité de marque au site final, je vous accompagne à chaque étape avec exigence et créativité." />
+        <SectionHeading eyebrow="Services" title="Trois services, un objectif : votre réussite en ligne" desc="Du site vitrine à la boutique catalogue, je crée le site qui correspond exactement à votre activité." />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((s, i) => (
             <Reveal key={s.title} delay={i * 80}>
@@ -55,7 +55,7 @@ export function AboutSection() {
           <div className="absolute -inset-4 rounded-[2.5rem] border border-primary/40" aria-hidden />
           <img src={portrait.url} alt={`Portrait de ${SITE.fullName}, créatrice de sites web`} width={736} height={718} loading="lazy" className="relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]" />
           <div className="card-lux absolute -bottom-6 -right-2 px-6 py-4 sm:-right-8">
-            <p className="font-display text-3xl text-gold">9 ans</p>
+            <p className="font-display text-3xl text-gold">4 ans</p>
             <p className="text-xs text-muted-foreground">d'expertise web</p>
           </div>
         </Reveal>
@@ -63,7 +63,7 @@ export function AboutSection() {
           <p className="eyebrow">À propos</p>
           <h2 id="about-title" className="mt-4 text-3xl font-semibold leading-tight text-gold sm:text-4xl md:text-5xl">Bonjour, je suis Cadorelle.</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">
-            Créatrice de sites web basée à Bohicon, j'aide les entrepreneurs, PME et marques ambitieuses à exister en ligne avec élégance. Depuis 9 ans, je conçois des sites qui allient beauté, clarté et performance — pour que chaque visiteur ait envie de vous faire confiance.
+            Créatrice de sites web basée à Bohicon, j'aide les entrepreneurs, PME et marques ambitieuses à exister en ligne avec élégance. Depuis 4 ans, je conçois des sites qui allient beauté, clarté et performance — pour que chaque visiteur ait envie de vous faire confiance.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
