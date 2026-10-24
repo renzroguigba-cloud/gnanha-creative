@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, MessageSquare, PencilRuler, Rocket, SearchCheck } from "lucide-react";
 import { pageHead } from "@/lib/site";
-import { CtaSection, PageHero, PricingSection, ServicesSection } from "@/components/site/Sections";
+import { CtaSection, PageHero, ServicesPricingSection } from "@/components/site/Sections";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 
 const steps = [
@@ -12,7 +12,7 @@ const steps = [
 ];
 
 const included = [
-  "Nom de domaine et hébergement configurés",
+  "Accompagnement pour choisir et configurer votre nom de domaine et votre hébergement",
   "Site adapté au mobile, à la tablette et à l'ordinateur",
   "Boutons WhatsApp et formulaire de contact",
   "Référencement de base sur Google",
@@ -21,11 +21,11 @@ const included = [
 ];
 
 export const Route = createFileRoute("/services")({
-  head: () => pageHead("Services & tarifs de création de sites web", "Sites vitrines, boutiques catalogue avec commande WhatsApp et portfolios au Bénin : découvrez les services et les offres Essentiel, Premium et Sur mesure de Cadorelle.", "/services"),
+  head: () => pageHead("Services & tarifs de création de sites web", "Sites vitrines dès 180 € et portfolios professionnels dès 150 € : découvrez les services de Cadorelle et demandez votre devis personnalisé.", "/services"),
   component: () => (
     <>
-      <PageHero eyebrow="Services & tarifs" title="Des sites pensés pour votre activité" desc="Sites vitrines, boutiques catalogue WhatsApp et portfolios : découvrez mes services et les formules adaptées à votre projet." />
-      <ServicesSection />
+      <PageHero eyebrow="Services & tarifs" title="Des sites pensés pour votre activité" desc="Site vitrine pour votre activité ou portfolio pour valoriser votre travail : découvrez mes services et les budgets adaptés à votre projet." />
+      <ServicesPricingSection />
       <section className="bg-surface py-20 md:py-28" aria-labelledby="process-title">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeading eyebrow="Méthode" title="Comment se déroule votre projet" desc="Un processus simple et transparent, du premier échange à la mise en ligne." />
@@ -47,7 +47,6 @@ export const Route = createFileRoute("/services")({
           </div>
         </div>
       </section>
-      <PricingSection />
       <section className="bg-surface py-20 md:py-28" aria-labelledby="included-title">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mx-auto max-w-3xl">

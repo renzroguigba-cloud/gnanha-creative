@@ -38,6 +38,30 @@ export const SERVICES = [
   { icon: Briefcase, title: "Portfolio pour marques et entrepreneurs", desc: "Un portfolio professionnel qui met en valeur votre travail et votre image, pour marques, entrepreneurs et entreprises.", benefits: ["Mise en valeur de vos réalisations", "Image premium et crédible", "Parcours pensé pour convaincre"] },
 ];
 
+export const MAIN_SERVICES = [
+  {
+    icon: MonitorSmartphone,
+    title: "Création de site web vitrine",
+    price: "180 € – 1 000 €",
+    desc: "La solution des entrepreneurs, entreprises, restaurants, hôtels, commerces et prestataires de services qui souhaitent développer leur présence en ligne.",
+    highlights: ["Design professionnel et navigation fluide", "Adapté aux mobiles et aux ordinateurs", "Présentation claire de vos activités et services"],
+    priceFactor: "Le prix final dépend du nombre de pages, des fonctionnalités, du niveau de personnalisation et de la complexité du projet.",
+    cta: "Demander un devis",
+  },
+  {
+    icon: Briefcase,
+    title: "Création de portfolio professionnel",
+    price: "150 € – 1 000 €",
+    desc: "Pour les freelances, créateurs, consultants, artistes, professionnels et entrepreneurs qui veulent valoriser leurs réalisations et attirer de nouveaux clients.",
+    highlights: ["Présentation de vos projets et compétences", "Navigation fluide et image crédible", "Moyens de contact accessibles"],
+    priceFactor: "Le prix final dépend du volume de contenu, du nombre de projets, du niveau de personnalisation et des fonctionnalités souhaitées.",
+    cta: "Créer mon portfolio",
+  },
+] as const;
+
+export const PRICING_NOTICE =
+  "Les tarifs indiqués couvrent uniquement la création du site web ou du portfolio. Le nom de domaine et l'hébergement web ne sont pas inclus et restent à la charge du client. Ces frais peuvent être souscrits séparément auprès d'un fournisseur.";
+
 export const PROJECTS = [
   { img: lumia.url, title: "LUMÎA Studio", category: "Photographie", desc: "Studio photo : mariages, portraits et photographie corporate.", url: "https://lumia-shooting-portfolio.vercel.app/" },
   { img: sagesse.url, title: "MemeTon Sagesse", category: "Portfolio · Montage vidéo", desc: "Un portfolio consacré aux Reels, Shorts et TikToks.", url: "https://sagesse-memeton-psi.vercel.app/" },
@@ -46,11 +70,6 @@ export const PROJECTS = [
   { img: paradise.url, title: "Paradise Hotel Abomey", category: "Hôtellerie", desc: "Le site du Paradise Hotel, à Abomey au Bénin.", url: "https://paradise-abomey.lovable.app/" },
 ];
 
-export const PLANS = [
-  { name: "Essentiel", price: "150 000", unit: "FCFA", desc: "Pour lancer votre présence en ligne avec élégance.", features: ["Site vitrine jusqu'à 4 pages", "Design responsive", "Formulaire de contact & WhatsApp", "SEO de base", "Livraison en 2 semaines"], featured: false },
-  { name: "Premium", price: "350 000", unit: "FCFA", desc: "Le choix idéal pour les entreprises ambitieuses.", features: ["Jusqu'à 8 pages sur mesure", "Branding léger inclus", "Animations premium", "SEO avancé & statistiques", "1 mois de maintenance offert"], featured: true },
-  { name: "Sur mesure", price: "Sur devis", unit: "", desc: "Pour les projets complexes : e-commerce, plateformes.", features: ["Fonctionnalités avancées", "Boutique & paiement en ligne", "Identité visuelle complète", "Accompagnement dédié", "Maintenance continue"], featured: false },
-];
 
 export const FAQS = [
   { q: "Combien de temps faut-il pour créer un site ?", a: "Comptez 2 à 3 semaines pour un site vitrine, et 4 à 8 semaines pour un projet plus complet comme une boutique en ligne." },
@@ -58,7 +77,7 @@ export const FAQS = [
   { q: "Comment se déroule le paiement ?", a: "Un acompte est demandé au lancement du projet, le solde à la livraison. Le paiement par Mobile Money est accepté." },
   { q: "Pourrai-je modifier mon site moi-même ?", a: "Oui, si vous le souhaitez. Je vous forme à la gestion de vos contenus à la livraison." },
   { q: "Travaillez-vous avec des clients hors du Bénin ?", a: "Absolument. Je travaille à distance avec des clients partout en Afrique et dans le monde." },
-  { q: "Le référencement Google est-il inclus ?", a: "Toutes les offres incluent les bases du référencement. L'offre Premium ajoute une optimisation avancée." },
+  { q: "Le référencement Google est-il inclus ?", a: "Toutes les offres incluent les bases du référencement. Une optimisation avancée peut être ajoutée selon votre projet." },
   { q: "Que se passe-t-il après la mise en ligne ?", a: "Je reste disponible pour la maintenance, les mises à jour et l'évolution de votre site." },
 ];
 

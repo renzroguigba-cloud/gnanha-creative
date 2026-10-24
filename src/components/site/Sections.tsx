@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import portrait from "@/assets/cadorelle.jpg.asset.json";
-import { FAQS, LINKS, PLANS, PROJECTS, SERVICES, SITE, STATS } from "@/lib/site";
+import { FAQS, LINKS, MAIN_SERVICES, PRICING_NOTICE, PROJECTS, SERVICES, SITE, STATS } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
 export { TestimonialsSection } from "./SocialTestimonials";
@@ -131,27 +131,48 @@ export function PortfolioSection({ limit }: { limit?: number }) {
   );
 }
 
-export function PricingSection() {
+export function ServicesPricingSection() {
   return (
     <section className="py-20 md:py-28" aria-labelledby="pricing-title">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionHeading eyebrow="Tarifs" title="Des offres claires, sans surprise" desc="Chaque projet est unique : ces formules sont un point de départ, ajustable à vos besoins." />
-        <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
-          {PLANS.map((p, i) => (
-            <Reveal key={p.name} delay={i * 90}>
-              <article className={cn("card-lux relative flex h-full flex-col p-8", p.featured && "border-primary/70 lg:-translate-y-4")}>
-                {p.featured && <span className="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">Le plus choisi</span>}
-                <h3 className="text-2xl text-foreground">{p.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-                <p className="mt-6 font-display text-4xl text-gold">{p.price} <span className="font-sans text-sm text-muted-foreground">{p.unit}</span></p>
-                <ul className="mt-6 flex-1 space-y-3">
-                  {p.features.map((f) => <li key={f} className="flex gap-2 text-sm text-foreground/90"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />{f}</li>)}
+        <SectionHeading
+          eyebrow="Tarifs"
+          title="Deux services, des budgets clairs"
+          desc="Site vitrine ou portfolio : choisissez la solution adaptée à votre besoin, puis demandez votre devis personnalisé."
+        />
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          {MAIN_SERVICES.map((s, i) => (
+            <Reveal key={s.title} delay={i * 100} className="h-full">
+              <article className="card-lux group relative flex h-full flex-col overflow-hidden p-8 transition duration-500 hover:-translate-y-1.5 hover:border-primary/60">
+                <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-primary/10 blur-2xl transition duration-500 group-hover:bg-primary/25" aria-hidden />
+                <div className="flex items-center gap-4">
+                  <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-accent text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
+                    <s.icon className="h-6 w-6" aria-hidden />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{s.title}</h3>
+                </div>
+                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                <ul className="mt-5 space-y-2">
+                  {s.highlights.map((h) => (
+                    <li key={h} className="flex items-center gap-2 text-sm text-foreground/90"><Check className="h-4 w-4 shrink-0 text-primary" aria-hidden />{h}</li>
+                  ))}
                 </ul>
-                <Link to="/contact" className={cn("mt-8 w-full", p.featured ? "btn-gold" : "btn-outline-gold")}>{p.price === "Sur devis" ? "Demander un devis" : "Choisir cette offre"}</Link>
+                <div className="mt-auto">
+                  <p className="eyebrow mt-8 !text-[0.68rem]">Tarifs</p>
+                  <p className="mt-1 font-display text-3xl font-semibold text-gold sm:text-4xl">{s.price}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{s.priceFactor}</p>
+                </div>
+                <Link to="/contact" className="btn-gold mt-7 w-full">{s.cta} <ArrowRight className="h-4 w-4" /></Link>
               </article>
             </Reveal>
           ))}
         </div>
+        <Reveal delay={150} className="mt-8">
+          <p className="mx-auto flex max-w-3xl items-start gap-3 rounded-2xl border border-border bg-card/60 px-5 py-4 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+            <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+            <span><strong className="font-semibold text-foreground">Important :</strong> {PRICING_NOTICE}</span>
+          </p>
+        </Reveal>
       </div>
     </section>
   );
