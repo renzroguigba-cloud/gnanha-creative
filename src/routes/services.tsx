@@ -12,7 +12,7 @@ const steps = [
 ];
 
 const included = [
-  "Nom de domaine et hébergement configurés",
+  "Accompagnement pour choisir et configurer votre nom de domaine et votre hébergement",
   "Site adapté au mobile, à la tablette et à l'ordinateur",
   "Boutons WhatsApp et formulaire de contact",
   "Référencement de base sur Google",
