@@ -19,6 +19,24 @@ export function TestimonialsSection() {
     <section className="bg-surface py-20 md:py-28" aria-label="témoignage sociale">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading eyebrow="La parole à mes clients" title="témoignage sociale" />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {TESTIMONIALS.map((t, i) => (
+            <Reveal key={t.name} delay={(i % 3) * 80} className="h-full">
+              <figure className="card-lux flex h-full flex-col p-7">
+                <div className="flex gap-1" aria-label={`Note : ${t.rating} sur 5`}>
+                  {Array.from({ length: 5 }, (_, s) => (
+                    <Star key={s} className={s < t.rating ? "h-4 w-4 fill-primary text-primary" : "h-4 w-4 text-border"} aria-hidden />
+                  ))}
+                </div>
+                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">« {t.text} »</blockquote>
+                <figcaption className="mt-5 border-t border-border pt-4">
+                  <p className="font-semibold text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
         <div className="mx-auto mt-14 grid max-w-5xl items-start gap-6 md:grid-cols-3">
           <Reveal>
             <figure className="overflow-hidden rounded-lg border border-border bg-card">
