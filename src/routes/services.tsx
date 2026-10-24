@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, MessageSquare, PencilRuler, Rocket, SearchCheck } from "lucide-react";
 import { pageHead } from "@/lib/site";
-import { CtaSection, PageHero, PricingSection, ServicesSection } from "@/components/site/Sections";
+import { CtaSection, PageHero, ServicesPricingSection } from "@/components/site/Sections";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 
 const steps = [
