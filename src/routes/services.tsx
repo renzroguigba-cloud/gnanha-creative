@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services")({
   component: () => (
     <>
       <PageHero eyebrow="Services & tarifs" title="Des sites pensés pour votre activité" desc="Sites vitrines, boutiques catalogue WhatsApp et portfolios : découvrez mes services et les formules adaptées à votre projet." />
-      <ServicesSection />
+      <ServicesPricingSection />
       <section className="bg-surface py-20 md:py-28" aria-labelledby="process-title">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeading eyebrow="Méthode" title="Comment se déroule votre projet" desc="Un processus simple et transparent, du premier échange à la mise en ligne." />
