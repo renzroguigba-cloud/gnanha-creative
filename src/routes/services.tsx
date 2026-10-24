@@ -47,7 +47,6 @@ export const Route = createFileRoute("/services")({
           </div>
         </div>
       </section>
-      <PricingSection />
       <section className="bg-surface py-20 md:py-28" aria-labelledby="included-title">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mx-auto max-w-3xl">
