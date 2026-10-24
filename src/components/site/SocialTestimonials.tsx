@@ -1,4 +1,5 @@
-import { MessageCircle, Video } from "lucide-react";
+import { MessageCircle, Star, Video } from "lucide-react";
+import { TESTIMONIALS } from "@/lib/site";
 import screenshot from "@/assets/temoignage-warren.jpg.asset.json";
 import video1 from "@/assets/temoignage-client-1.mp4.asset.json";
 import video2 from "@/assets/temoignage-client-2.mp4.asset.json";
