@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { NAV, PROJECTS, SERVICES, STATS } from "@/lib/site";
+import { MAIN_SERVICES, NAV, PRICING_NOTICE, PROJECTS, SERVICES, STATS } from "@/lib/site";
 
 describe("Client-supplied portfolio", () => {
   it("contains only the five supplied website destinations", () => {
@@ -36,5 +36,22 @@ describe("Real services and stats", () => {
     expect(values["Projets livrés"]).toBe("50+");
     expect(values["Clients satisfaits"]).toBe("95%");
     expect(values["D'expérience"]).toBe("4 ans");
+  });
+});
+
+describe("Services & tarifs pricing", () => {
+  it("presents the two main services with their exact price ranges", () => {
+    expect(MAIN_SERVICES.map((s) => [s.title, s.price])).toEqual([
+      ["Création de site web vitrine", "180 € – 1 000 €"],
+      ["Création de portfolio professionnel", "150 € – 1 000 €"],
+    ]);
+  });
+
+  it("states that domain name and hosting are not included in the prices", () => {
+    expect(PRICING_NOTICE).toContain("Le nom de domaine et l'hébergement web ne sont pas inclus");
+  });
+
+  it("gives each service its own call to action", () => {
+    expect(MAIN_SERVICES.map((s) => s.cta)).toEqual(["Demander un devis", "Créer mon portfolio"]);
   });
 });
