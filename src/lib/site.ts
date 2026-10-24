@@ -70,11 +70,6 @@ export const PROJECTS = [
   { img: paradise.url, title: "Paradise Hotel Abomey", category: "Hôtellerie", desc: "Le site du Paradise Hotel, à Abomey au Bénin.", url: "https://paradise-abomey.lovable.app/" },
 ];
 
-export const PLANS = [
-  { name: "Essentiel", price: "150 000", unit: "FCFA", desc: "Pour lancer votre présence en ligne avec élégance.", features: ["Site vitrine jusqu'à 4 pages", "Design responsive", "Formulaire de contact & WhatsApp", "SEO de base", "Livraison en 2 semaines"], featured: false },
-  { name: "Premium", price: "350 000", unit: "FCFA", desc: "Le choix idéal pour les entreprises ambitieuses.", features: ["Jusqu'à 8 pages sur mesure", "Branding léger inclus", "Animations premium", "SEO avancé & statistiques", "1 mois de maintenance offert"], featured: true },
-  { name: "Sur mesure", price: "Sur devis", unit: "", desc: "Pour les projets complexes : e-commerce, plateformes.", features: ["Fonctionnalités avancées", "Boutique & paiement en ligne", "Identité visuelle complète", "Accompagnement dédié", "Maintenance continue"], featured: false },
-];
 
 export const FAQS = [
   { q: "Combien de temps faut-il pour créer un site ?", a: "Comptez 2 à 3 semaines pour un site vitrine, et 4 à 8 semaines pour un projet plus complet comme une boutique en ligne." },
