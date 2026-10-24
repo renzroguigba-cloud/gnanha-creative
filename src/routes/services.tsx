@@ -21,10 +21,10 @@ const included = [
 ];
 
 export const Route = createFileRoute("/services")({
-  head: () => pageHead("Services & tarifs de création de sites web", "Sites vitrines, boutiques catalogue avec commande WhatsApp et portfolios au Bénin : découvrez les services et les offres Essentiel, Premium et Sur mesure de Cadorelle.", "/services"),
+  head: () => pageHead("Services & tarifs de création de sites web", "Sites vitrines dès 180 € et portfolios professionnels dès 150 € : découvrez les services de Cadorelle et demandez votre devis personnalisé.", "/services"),
   component: () => (
     <>
-      <PageHero eyebrow="Services & tarifs" title="Des sites pensés pour votre activité" desc="Sites vitrines, boutiques catalogue WhatsApp et portfolios : découvrez mes services et les formules adaptées à votre projet." />
+      <PageHero eyebrow="Services & tarifs" title="Des sites pensés pour votre activité" desc="Site vitrine pour votre activité ou portfolio pour valoriser votre travail : découvrez mes services et les budgets adaptés à votre projet." />
       <ServicesPricingSection />
       <section className="bg-surface py-20 md:py-28" aria-labelledby="process-title">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
