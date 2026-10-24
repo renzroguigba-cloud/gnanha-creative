@@ -38,6 +38,30 @@ export const SERVICES = [
   { icon: Briefcase, title: "Portfolio pour marques et entrepreneurs", desc: "Un portfolio professionnel qui met en valeur votre travail et votre image, pour marques, entrepreneurs et entreprises.", benefits: ["Mise en valeur de vos réalisations", "Image premium et crédible", "Parcours pensé pour convaincre"] },
 ];
 
+export const MAIN_SERVICES = [
+  {
+    icon: MonitorSmartphone,
+    title: "Création de site web vitrine",
+    price: "180 € – 1 000 €",
+    desc: "La solution des entrepreneurs, entreprises, restaurants, hôtels, commerces et prestataires de services qui souhaitent développer leur présence en ligne.",
+    highlights: ["Design professionnel et navigation fluide", "Adapté aux mobiles et aux ordinateurs", "Présentation claire de vos activités et services"],
+    priceFactor: "Le prix final dépend du nombre de pages, des fonctionnalités, du niveau de personnalisation et de la complexité du projet.",
+    cta: "Demander un devis",
+  },
+  {
+    icon: Briefcase,
+    title: "Création de portfolio professionnel",
+    price: "150 € – 1 000 €",
+    desc: "Pour les freelances, créateurs, consultants, artistes, professionnels et entrepreneurs qui veulent valoriser leurs réalisations et attirer de nouveaux clients.",
+    highlights: ["Présentation de vos projets et compétences", "Navigation fluide et image crédible", "Moyens de contact accessibles"],
+    priceFactor: "Le prix final dépend du volume de contenu, du nombre de projets, du niveau de personnalisation et des fonctionnalités souhaitées.",
+    cta: "Créer mon portfolio",
+  },
+] as const;
+
+export const PRICING_NOTICE =
+  "Les tarifs indiqués couvrent uniquement la création du site web ou du portfolio. Le nom de domaine et l'hébergement web ne sont pas inclus et restent à la charge du client. Ces frais peuvent être souscrits séparément auprès d'un fournisseur.";
+
 export const PROJECTS = [
   { img: lumia.url, title: "LUMÎA Studio", category: "Photographie", desc: "Studio photo : mariages, portraits et photographie corporate.", url: "https://lumia-shooting-portfolio.vercel.app/" },
   { img: sagesse.url, title: "MemeTon Sagesse", category: "Portfolio · Montage vidéo", desc: "Un portfolio consacré aux Reels, Shorts et TikToks.", url: "https://sagesse-memeton-psi.vercel.app/" },
