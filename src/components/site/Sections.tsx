@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import portrait from "@/assets/cadorelle.jpg.asset.json";
-import { FAQS, LINKS, PLANS, PROJECTS, SERVICES, SITE, STATS } from "@/lib/site";
+import { FAQS, LINKS, MAIN_SERVICES, PRICING_NOTICE, PROJECTS, SERVICES, SITE, STATS } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
 export { TestimonialsSection } from "./SocialTestimonials";
