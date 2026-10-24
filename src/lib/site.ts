@@ -77,7 +77,7 @@ export const FAQS = [
   { q: "Comment se déroule le paiement ?", a: "Un acompte est demandé au lancement du projet, le solde à la livraison. Le paiement par Mobile Money est accepté." },
   { q: "Pourrai-je modifier mon site moi-même ?", a: "Oui, si vous le souhaitez. Je vous forme à la gestion de vos contenus à la livraison." },
   { q: "Travaillez-vous avec des clients hors du Bénin ?", a: "Absolument. Je travaille à distance avec des clients partout en Afrique et dans le monde." },
-  { q: "Le référencement Google est-il inclus ?", a: "Toutes les offres incluent les bases du référencement. L'offre Premium ajoute une optimisation avancée." },
+  { q: "Le référencement Google est-il inclus ?", a: "Toutes les offres incluent les bases du référencement. Une optimisation avancée peut être ajoutée selon votre projet." },
   { q: "Que se passe-t-il après la mise en ligne ?", a: "Je reste disponible pour la maintenance, les mises à jour et l'évolution de votre site." },
 ];
 
