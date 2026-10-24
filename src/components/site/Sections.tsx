@@ -136,7 +136,7 @@ export function ServicesPricingSection() {
     <section className="py-20 md:py-28" aria-labelledby="pricing-title">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
-          eyebrow="Services & tarifs"
+          eyebrow="Tarifs"
           title="Deux services, des budgets clairs"
           desc="Site vitrine ou portfolio : choisissez la solution adaptée à votre besoin, puis demandez votre devis personnalisé."
         />
