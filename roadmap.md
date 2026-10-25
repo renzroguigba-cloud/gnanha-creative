@@ -1,11 +1,12 @@
 # Requested updates
+- [ ] Contact form: rename name field label to « Nom et prénom complet ».
+- [ ] Fix WhatsApp link so clicks open the WhatsApp chat reliably.
+- [ ] Owner notifications for new contact requests (needs a verified email domain — setup dialog shown to user).
 - [x] Add the WhatsApp catalogue offer, exact euro range, scope, exclusions and delivery estimate; verify contact links and layout.
 - [x] Combine services and pricing; move testimonials to the home page and update navigation while preserving old URLs.
 - [x] Replace invented projects and generated project imagery with five real website links.
 - [x] Add the supplied client screenshot and two playable videos under « témoignage sociale ».
-- [x] Check existing pages and contact flow, resolve unfinished work, and verify desktop/mobile.
 - [x] Restructure: each page has its own content, home page is no longer a landing page.
 - [x] Re-encode testimonial videos (denoise + sharpen + upscale) for better readability.
 - [x] Replace services with the three real ones; remove marketing digital, refonte, boutique en ligne.
 - [x] Update stats to 4 ans, 50+ projets, 95% satisfaction.
-- [x] Final verification: tests, build, desktop/mobile screenshots.
