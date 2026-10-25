@@ -1,7 +1,7 @@
 # Requested updates
-- [ ] Contact form: rename name field label to « Nom et prénom complet ».
-- [ ] Fix WhatsApp link so clicks open the WhatsApp chat reliably.
-- [ ] Owner notifications for new contact requests (needs a verified email domain — setup dialog shown to user).
+- [x] Contact form: rename name field label to « Nom et prénom complet ».
+- [x] WhatsApp link verified working (opens chat with prefilled message); popup blocker in preview was the cause.
+- [ ] Owner notifications for new contact requests — BLOCKED: needs a verified email domain owned by the user (setup dialog shown).
 - [x] Add the WhatsApp catalogue offer, exact euro range, scope, exclusions and delivery estimate; verify contact links and layout.
 - [x] Combine services and pricing; move testimonials to the home page and update navigation while preserving old URLs.
 - [x] Replace invented projects and generated project imagery with five real website links.
