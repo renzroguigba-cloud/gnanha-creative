@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { MAIN_SERVICES, NAV, PRICING_NOTICE, PROJECTS, SERVICES, STATS } from "@/lib/site";
+import { CATALOGUE_SERVICE, MAIN_SERVICES, NAV, PRICING_NOTICE, PROJECTS, SERVICES, STATS } from "@/lib/site";
 
 describe("Client-supplied portfolio", () => {
   it("contains only the five supplied website destinations", () => {
@@ -40,10 +40,11 @@ describe("Real services and stats", () => {
 });
 
 describe("Services & tarifs pricing", () => {
-  it("presents the two main services with their exact price ranges", () => {
+  it("presents the three main services with their exact price ranges", () => {
     expect(MAIN_SERVICES.map((s) => [s.title, s.price])).toEqual([
       ["Création de site web vitrine", "180 € – 1 000 €"],
       ["Création de portfolio professionnel", "150 € – 1 000 €"],
+      ["Création de boutique catalogue avec commande par WhatsApp", "250 € – 2 000 €"],
     ]);
   });
 
@@ -52,6 +53,20 @@ describe("Services & tarifs pricing", () => {
   });
 
   it("gives each service its own call to action", () => {
-    expect(MAIN_SERVICES.map((s) => s.cta)).toEqual(["Demander un devis", "Créer mon portfolio"]);
+    expect(MAIN_SERVICES.map((s) => s.cta)).toEqual(["Demander un devis", "Créer mon portfolio", "Demander un devis boutique"]);
+  });
+});
+
+describe("WhatsApp catalogue offer conditions", () => {
+  it("costs between 250 and 2000 euros", () => {
+    expect(CATALOGUE_SERVICE.priceRange).toEqual({ min: 250, max: 2000, currency: "EUR" });
+  });
+
+  it("estimates 5 to 7 business days after required information and photos arrive", () => {
+    expect(CATALOGUE_SERVICE.delivery).toEqual({ min: 5, max: 7, unit: "businessDays", startsAfter: "requiredInformationAndPhotos" });
+  });
+
+  it.each(["onlinePayment", "automaticInventory", "productAdmin", "domainAndHosting"])("excludes %s from this offer", (feature) => {
+    expect(CATALOGUE_SERVICE.exclusions.map((item) => item.key)).toContain(feature);
   });
 });

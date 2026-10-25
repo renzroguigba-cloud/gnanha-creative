@@ -137,14 +137,13 @@ export function ServicesPricingSection() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Tarifs"
-          title="Deux services, des budgets clairs"
-          desc="Site vitrine ou portfolio : choisissez la solution adaptée à votre besoin, puis demandez votre devis personnalisé."
+          title="Trois services, des budgets clairs"
+          desc="Site vitrine, portfolio ou boutique catalogue WhatsApp : choisissez la solution adaptée à votre besoin, puis demandez votre devis personnalisé."
         />
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {MAIN_SERVICES.map((s, i) => (
             <Reveal key={s.title} delay={i * 100} className="h-full">
-              <article className="card-lux group relative flex h-full flex-col overflow-hidden p-8 transition duration-500 hover:-translate-y-1.5 hover:border-primary/60">
-                <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-primary/10 blur-2xl transition duration-500 group-hover:bg-primary/25" aria-hidden />
+              <article className="card-lux group relative flex h-full flex-col overflow-hidden p-6 transition duration-500 hover:-translate-y-1.5 hover:border-primary/60 motion-reduce:transform-none motion-reduce:transition-none sm:p-8 lg:p-6">
                 <div className="flex items-center gap-4">
                   <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-accent text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
                     <s.icon className="h-6 w-6" aria-hidden />
@@ -152,17 +151,27 @@ export function ServicesPricingSection() {
                   <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{s.title}</h3>
                 </div>
                 <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                {"audience" in s && <><h4 className="mt-5 text-base font-semibold text-foreground">Pour qui ?</h4><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.audience}</p><h4 className="mt-5 text-base font-semibold text-foreground">Ce que comprend le service</h4></>}
                 <ul className="mt-5 space-y-2">
                   {s.highlights.map((h) => (
-                    <li key={h} className="flex items-center gap-2 text-sm text-foreground/90"><Check className="h-4 w-4 shrink-0 text-primary" aria-hidden />{h}</li>
+                    <li key={h} className="flex items-start gap-2 text-sm text-foreground/90"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />{h}</li>
                   ))}
                 </ul>
+                {"exclusions" in s && (
+                  <div className="mt-6 border-t border-border pt-5">
+                    <h4 className="text-base font-semibold text-foreground">Ce qui n'est pas inclus</h4>
+                    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+                      {s.exclusions.map((item) => <li key={item.key}>{item.label}</li>)}
+                    </ul>
+                    <p className="mt-5 text-sm leading-relaxed text-foreground"><strong>Livraison estimée :</strong> {s.delivery.min} à {s.delivery.max} jours ouvrés après réception des informations et des photos nécessaires.</p>
+                  </div>
+                )}
                 <div className="mt-auto">
                   <p className="eyebrow mt-8 !text-[0.68rem]">Tarifs</p>
                   <p className="mt-1 font-display text-3xl font-semibold text-gold sm:text-4xl">{s.price}</p>
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{s.priceFactor}</p>
                 </div>
-                <Link to="/contact" className="btn-gold mt-7 w-full">{s.cta} <ArrowRight className="h-4 w-4" /></Link>
+                <Button asChild className="btn-gold mt-7 h-auto w-full whitespace-normal text-center"><Link to="/contact">{s.cta} <ArrowRight className="h-4 w-4 shrink-0" /></Link></Button>
               </article>
             </Reveal>
           ))}

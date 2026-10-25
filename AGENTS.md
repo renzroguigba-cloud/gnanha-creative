@@ -13,3 +13,4 @@
 - Render client photo/video testimonials through the shared SocialTestimonials component so home and content pages stay consistent; use native video controls without autoplay.
 - Store supplied media and actual website screenshots as Lovable Assets pointers; never copy uploaded binaries into the repository.
 - Keep merged page content at its canonical route and permanently redirect former public URLs to that route to preserve existing links.
+- Define catalogue pricing, exclusions and delivery conditions in the shared service data so display and rule tests use one source of truth.
