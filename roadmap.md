@@ -1,4 +1,5 @@
 # Requested updates
+- [ ] Add the WhatsApp catalogue offer, exact euro range, scope, exclusions and delivery estimate; verify contact links and layout.
 - [ ] Combine services and pricing; move testimonials to the home page and update navigation while preserving old URLs.
 - [x] Replace invented projects and generated project imagery with five real website links.
 - [x] Add the supplied client screenshot and two playable videos under « témoignage sociale ».
