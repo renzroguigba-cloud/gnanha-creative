@@ -74,7 +74,7 @@ export function ContactSection() {
           ) : (
             <form onSubmit={onSubmit} noValidate className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="text-sm font-medium">Nom complet *</label>
+                <label htmlFor="name" className="text-sm font-medium">Nom et prénom complet *</label>
                 <input id="name" name="name" autoComplete="name" className={field} placeholder="Votre nom" aria-invalid={!!errors.name} aria-describedby="name-err" />
                 {errors.name && <p id="name-err" className="mt-1 text-xs text-destructive">{errors.name}</p>}
               </div>
