@@ -16,15 +16,15 @@ const included = [
   "Site adapté au mobile, à la tablette et à l'ordinateur",
   "Boutons WhatsApp et formulaire de contact",
   "Référencement de base sur Google",
-  "Formation à la gestion de vos contenus",
+  "Conseils pour utiliser votre site et recevoir les demandes de vos clients",
   "Support réactif après la livraison",
 ];
 
 export const Route = createFileRoute("/services")({
-  head: () => pageHead("Services & tarifs de création de sites web", "Sites vitrines dès 180 € et portfolios professionnels dès 150 € : découvrez les services de Cadorelle et demandez votre devis personnalisé.", "/services"),
+  head: () => pageHead("Services & tarifs de création de sites web", "Sites vitrines dès 180 €, portfolios dès 150 € et boutiques catalogues WhatsApp de 250 € à 2 000 € : demandez votre devis à Cadorelle.", "/services"),
   component: () => (
     <>
-      <PageHero eyebrow="Services & tarifs" title="Des sites pensés pour votre activité" desc="Site vitrine pour votre activité ou portfolio pour valoriser votre travail : découvrez mes services et les budgets adaptés à votre projet." />
+      <PageHero eyebrow="Services & tarifs" title="Des sites pensés pour votre activité" desc="Site vitrine, portfolio professionnel ou boutique catalogue avec commande par WhatsApp : découvrez mes services et les budgets adaptés à votre projet." />
       <ServicesPricingSection />
       <section className="bg-surface py-20 md:py-28" aria-labelledby="process-title">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
