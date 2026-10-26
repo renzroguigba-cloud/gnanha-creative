@@ -1,4 +1,4 @@
-type Lead = { name: string; email: string; company?: string | null; project_type: string; message: string };
+type Lead = { name: string; email: string; company?: string | null | undefined; project_type: string; message: string };
 
 const OWNER_EMAIL = "waldellecadorelle@gmail.com";
 
