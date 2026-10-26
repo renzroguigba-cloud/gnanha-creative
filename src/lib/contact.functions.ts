@@ -24,5 +24,8 @@ export const submitContact = createServerFn({ method: "POST" })
       console.error("contact insert failed", error);
       throw new Error("Envoi impossible pour le moment.");
     }
+    const { notifyOwnerByGmail, notifyOwnerByWhatsApp } = await import("./notify.server");
+    const results = await Promise.allSettled([notifyOwnerByGmail(data), notifyOwnerByWhatsApp(data)]);
+    results.forEach((r) => r.status === "rejected" && console.error("owner notification failed", r.reason));
     return { ok: true };
   });
