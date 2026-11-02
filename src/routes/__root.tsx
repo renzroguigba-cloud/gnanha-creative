@@ -141,7 +141,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
-      <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Discuter sur WhatsApp" className="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-[var(--shadow-gold)] transition hover:scale-105">
+      <a href={LINKS.whatsapp} aria-label="Discuter sur WhatsApp" className="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-[var(--shadow-gold)] transition hover:scale-105">
         <MessageCircle className="h-6 w-6" />
       </a>
     </QueryClientProvider>

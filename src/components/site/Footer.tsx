@@ -13,8 +13,8 @@ export function Footer() {
             {SITE.fullName}, créatrice de sites web basée à {SITE.city}. Design premium, développement moderne et accompagnement humain pour les marques qui veulent briller en ligne.
           </p>
           <div className="mt-6 flex gap-3">
-            <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="grid h-11 w-11 place-items-center rounded-full border border-border text-primary transition hover:bg-accent"><MessageCircle className="h-5 w-5" /></a>
-            <a href={LINKS.gmail} target="_blank" rel="noopener noreferrer" aria-label="Gmail" className="grid h-11 w-11 place-items-center rounded-full border border-border text-primary transition hover:bg-accent"><Mail className="h-5 w-5" /></a>
+            <a href={LINKS.whatsapp} aria-label="WhatsApp" className="grid h-11 w-11 place-items-center rounded-full border border-border text-primary transition hover:bg-accent"><MessageCircle className="h-5 w-5" /></a>
+            <a href={LINKS.gmail} aria-label="Gmail" className="grid h-11 w-11 place-items-center rounded-full border border-border text-primary transition hover:bg-accent"><Mail className="h-5 w-5" /></a>
             <a href={LINKS.tel} aria-label="Téléphone" className="grid h-11 w-11 place-items-center rounded-full border border-border text-primary transition hover:bg-accent"><Phone className="h-5 w-5" /></a>
           </div>
         </div>
@@ -30,8 +30,8 @@ export function Footer() {
           <h2 className="font-display text-lg text-foreground">Contact</h2>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0 text-primary" />{SITE.city}</li>
-            <li><a href={LINKS.mailto} className="flex gap-2 break-all hover:text-primary"><Mail className="h-4 w-4 shrink-0 text-primary" />{SITE.email}</a></li>
-            <li><a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="flex gap-2 hover:text-primary"><MessageCircle className="h-4 w-4 shrink-0 text-primary" />{SITE.phoneDisplay}</a></li>
+            <li><a href={LINKS.gmail} className="flex gap-2 break-all hover:text-primary"><Mail className="h-4 w-4 shrink-0 text-primary" />{SITE.email}</a></li>
+            <li><a href={LINKS.whatsapp} className="flex gap-2 hover:text-primary"><MessageCircle className="h-4 w-4 shrink-0 text-primary" />{SITE.phoneDisplay}</a></li>
           </ul>
         </div>
       </div>

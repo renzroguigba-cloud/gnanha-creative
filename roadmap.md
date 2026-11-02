@@ -1,7 +1,10 @@
 # Requested updates
 - [x] Contact form: rename name field label to « Nom et prénom complet ».
 - [x] WhatsApp link verified working (opens chat with prefilled message); popup blocker in preview was the cause.
-- [ ] Owner notifications for new contact requests — BLOCKED: needs a verified email domain owned by the user (setup dialog shown).
+- [x] Verify owner Gmail notifications through the connected Gmail account: form test received in INBOX with all client fields.
+- [ ] Automatic WhatsApp owner alerts — BLOCKED: owner's CallMeBot authorization/key is not supplied.
+- [x] Add Julio's real portfolio and replace Warren's preview with a clear homepage screenshot; verify six previews on desktop/tablet/mobile.
+- [x] Finalize direct WhatsApp/Gmail links without popup windows and limit contact project choices to the three offered services.
 - [x] Add the WhatsApp catalogue offer, exact euro range, scope, exclusions and delivery estimate; verify contact links and layout.
 - [x] Combine services and pricing; move testimonials to the home page and update navigation while preserving old URLs.
 - [x] Replace invented projects and generated project imagery with five real website links.
