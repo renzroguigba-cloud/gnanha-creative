@@ -17,7 +17,7 @@ function summary(l: Lead) {
   ].join("\n");
 }
 
-export async function notifyOwnerByGmail(l: Lead, credentials: { lovableKey?: string; gmailKey?: string }) {
+export async function notifyOwnerByGmail(l: Lead, credentials: { lovableKey: string | undefined; gmailKey: string | undefined }) {
   const { lovableKey, gmailKey } = credentials;
   if (!lovableKey || !gmailKey) throw new Error("Gmail non configuré");
   const raw = b64([
