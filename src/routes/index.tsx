@@ -7,6 +7,7 @@ import lumia from "@/assets/realisation-lumia.jpg.asset.json";
 import { pageHead, SITE } from "@/lib/site";
 import { Reveal } from "@/components/site/Reveal";
 import { TestimonialsSection } from "@/components/site/SocialTestimonials";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead("Créatrice de sites web à Bohicon, Bénin", "Découvrez Gnanha W. Cadorelle, ses sites vitrines, boutiques catalogue WhatsApp et portfolios, ainsi que les témoignages de ses clients.", "/"),
@@ -24,7 +25,7 @@ function Index() {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
     const text = encodeURIComponent(`Bonjour Cadorelle, je souhaite créer : ${idea.trim() || "un site web"}.`);
-    window.open(`https://wa.me/2290142554256?text=${text}`, "_blank", "noopener");
+    window.location.assign(`https://wa.me/2290142554256?text=${text}`);
   };
 
   return (
@@ -41,7 +42,7 @@ function Index() {
               <Search className="ml-4 h-5 w-5 shrink-0 text-muted-foreground" aria-hidden />
               <label htmlFor="idea" className="sr-only">Quel site souhaitez-vous créer ?</label>
               <input id="idea" value={idea} onChange={(e) => setIdea(e.target.value)} maxLength={200} placeholder="Quel site souhaitez-vous créer ?" className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none" />
-              <button type="submit" className="btn-gold !rounded-full !px-6 !py-3">Démarrer</button>
+              <Button type="submit" className="btn-gold h-auto !rounded-full !px-6 !py-3">Démarrer</Button>
             </form>
           </Reveal>
         </div>

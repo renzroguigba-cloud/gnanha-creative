@@ -14,3 +14,5 @@
 - Store supplied media and actual website screenshots as Lovable Assets pointers; never copy uploaded binaries into the repository.
 - Keep merged page content at its canonical route and permanently redirect former public URLs to that route to preserve existing links.
 - Define catalogue pricing, exclusions and delivery conditions in the shared service data so display and rule tests use one source of truth.
+- Derive contact project choices and validation from shared service titles so unsupported services cannot be submitted.
+- Read notification credentials inside the contact server handler and pass them to server-only helpers to preserve runtime secret boundaries.

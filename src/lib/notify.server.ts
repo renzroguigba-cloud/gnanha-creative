@@ -17,9 +17,8 @@ function summary(l: Lead) {
   ].join("\n");
 }
 
-export async function notifyOwnerByGmail(l: Lead) {
-  const lovableKey = process.env["LOVABLE_API_KEY"];
-  const gmailKey = process.env["GOOGLE_MAIL_API_KEY"];
+export async function notifyOwnerByGmail(l: Lead, credentials: { lovableKey?: string; gmailKey?: string }) {
+  const { lovableKey, gmailKey } = credentials;
   if (!lovableKey || !gmailKey) throw new Error("Gmail non configuré");
   const raw = b64([
     `To: ${OWNER_EMAIL}`,
@@ -35,14 +34,21 @@ export async function notifyOwnerByGmail(l: Lead) {
     headers: { Authorization: `Bearer ${lovableKey}`, "X-Connection-Api-Key": gmailKey, "Content-Type": "application/json" },
     body: JSON.stringify({ raw }),
   });
-  if (!res.ok) throw new Error(`Gmail ${res.status}: ${await res.text()}`);
+  if (!res.ok) {
+    const body = await res.text();
+    console.error(`Gmail ${res.status}: ${body}`);
+    throw new Error(`Gmail ${res.status}: ${body}`);
+  }
 }
 
 // Free WhatsApp alert via CallMeBot (personal use). Needs CALLMEBOT_API_KEY.
-export async function notifyOwnerByWhatsApp(l: Lead) {
-  const apiKey = process.env["CALLMEBOT_API_KEY"];
-  if (!apiKey) return;
+export async function notifyOwnerByWhatsApp(l: Lead, apiKey?: string) {
+  if (!apiKey) throw new Error("Notifications WhatsApp non configurées : autorisation CallMeBot requise.");
   const text = encodeURIComponent(`Nouvelle demande sur votre site\n\n${summary(l)}`);
   const res = await fetch(`https://api.callmebot.com/whatsapp.php?phone=2290142554256&text=${text}&apikey=${encodeURIComponent(apiKey)}`);
-  if (!res.ok) throw new Error(`WhatsApp ${res.status}`);
+  if (!res.ok) {
+    const body = await res.text();
+    console.error(`WhatsApp ${res.status}: ${body}`);
+    throw new Error(`WhatsApp ${res.status}: ${body}`);
+  }
 }

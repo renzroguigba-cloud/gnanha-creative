@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { CheckCircle2, Loader2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import { contactSchema, submitContact } from "@/lib/contact.functions";
+import { submitContact } from "@/lib/contact.functions";
+import { contactSchema, CONTACT_PROJECT_TYPES } from "@/lib/contact.schema";
+import { Button } from "@/components/ui/button";
 import { LINKS, SITE } from "@/lib/site";
 
-const TYPES = ["Site vitrine", "Boutique en ligne", "Branding / identité", "Refonte de site", "Maintenance", "Autre"];
 const field = "mt-2 w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/40";
 
 export function ContactSection() {
@@ -18,7 +19,7 @@ export function ContactSection() {
     if (!parsed.success) {
       const errs: Record<string, string> = {} as Record<string, string>;
       parsed.error.issues.forEach((i) => (errs[String(i.path[0])] = i.message));
-      setErrors(errs as never);
+      setErrors(errs);
       return;
     }
     setErrors({});
@@ -33,8 +34,8 @@ export function ContactSection() {
   }
 
   const contacts = [
-    { icon: MessageCircle, label: "WhatsApp", value: SITE.phoneDisplay, href: LINKS.whatsapp, ext: true },
-    { icon: Mail, label: "Gmail", value: SITE.email, href: LINKS.gmail, ext: true },
+    { icon: MessageCircle, label: "WhatsApp", value: SITE.phoneDisplay, href: LINKS.whatsapp, ext: false },
+    { icon: Mail, label: "Gmail", value: SITE.email, href: LINKS.gmail, ext: false },
     { icon: Phone, label: "Téléphone", value: SITE.phoneDisplay, href: LINKS.tel, ext: false },
     { icon: MapPin, label: "Adresse", value: SITE.city, href: undefined, ext: false },
   ];
@@ -69,7 +70,7 @@ export function ContactSection() {
               <CheckCircle2 className="h-14 w-14 text-primary" aria-hidden />
               <h3 className="mt-5 text-2xl text-foreground">Merci, message bien reçu !</h3>
               <p className="mt-3 max-w-sm text-muted-foreground">Je reviens vers vous très rapidement. Pour une réponse immédiate, écrivez-moi sur WhatsApp.</p>
-              <button type="button" onClick={() => setStatus("idle")} className="btn-outline-gold mt-8">Envoyer un autre message</button>
+              <Button type="button" onClick={() => setStatus("idle")} className="btn-outline-gold mt-8 h-auto">Envoyer un autre message</Button>
             </div>
           ) : (
             <form onSubmit={onSubmit} noValidate className="grid gap-5 sm:grid-cols-2">
@@ -91,7 +92,7 @@ export function ContactSection() {
                 <label htmlFor="project_type" className="text-sm font-medium">Type de projet *</label>
                 <select id="project_type" name="project_type" defaultValue="" className={field} aria-invalid={!!errors.project_type} aria-describedby="type-err">
                   <option value="" disabled>Choisir…</option>
-                  {TYPES.map((t) => <option key={t}>{t}</option>)}
+                  {CONTACT_PROJECT_TYPES.map((t) => <option key={t}>{t}</option>)}
                 </select>
                 {errors.project_type && <p id="type-err" className="mt-1 text-xs text-destructive">{errors.project_type}</p>}
               </div>
@@ -101,9 +102,9 @@ export function ContactSection() {
                 {errors.message && <p id="msg-err" className="mt-1 text-xs text-destructive">{errors.message}</p>}
               </div>
               {status === "error" && <p className="text-sm text-destructive sm:col-span-2" role="alert">L'envoi a échoué. Réessayez ou écrivez-moi sur WhatsApp.</p>}
-              <button type="submit" disabled={status === "sending"} className="btn-gold sm:col-span-2 disabled:opacity-70">
+              <Button type="submit" disabled={status === "sending"} className="btn-gold h-auto sm:col-span-2 disabled:opacity-70">
                 {status === "sending" ? <><Loader2 className="h-4 w-4 animate-spin" /> Envoi…</> : "Envoyer le message"}
-              </button>
+              </Button>
             </form>
           )}
         </div>

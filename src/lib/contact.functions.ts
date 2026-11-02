@@ -1,13 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { z } from "zod";
-
-export const contactSchema = z.object({
-  name: z.string().trim().min(2, "Votre nom est requis").max(100),
-  email: z.string().trim().email("Email invalide").max(255),
-  company: z.string().trim().max(120).optional().or(z.literal("")),
-  project_type: z.string().trim().min(1, "Choisissez un type de projet").max(60),
-  message: z.string().trim().min(10, "Message trop court").max(2000),
-});
+import { contactSchema } from "./contact.schema";
 
 export const submitContact = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => contactSchema.parse(data))
@@ -25,7 +17,10 @@ export const submitContact = createServerFn({ method: "POST" })
       throw new Error("Envoi impossible pour le moment.");
     }
     const { notifyOwnerByGmail, notifyOwnerByWhatsApp } = await import("./notify.server");
-    const results = await Promise.allSettled([notifyOwnerByGmail(data), notifyOwnerByWhatsApp(data)]);
+    const results = await Promise.allSettled([
+      notifyOwnerByGmail(data, { lovableKey: process.env["LOVABLE_API_KEY"], gmailKey: process.env["GOOGLE_MAIL_API_KEY"] }),
+      notifyOwnerByWhatsApp(data, process.env["CALLMEBOT_API_KEY"]),
+    ]);
     results.forEach((r) => r.status === "rejected" && console.error("owner notification failed", r.reason));
     return { ok: true };
   });
