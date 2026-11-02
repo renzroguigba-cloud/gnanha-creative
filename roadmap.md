@@ -1,4 +1,5 @@
 # Requested updates
+- [ ] Home: page keyword search, six-project horizontal carousel, refreshed three-service design; verify navigation and layout.
 - [x] Contact form: rename name field label to « Nom et prénom complet ».
 - [x] WhatsApp link verified working (opens chat with prefilled message); popup blocker in preview was the cause.
 - [x] Verify owner Gmail notifications through the connected Gmail account: form test received in INBOX with all client fields.
