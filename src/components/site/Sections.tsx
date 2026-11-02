@@ -215,7 +215,7 @@ export function CtaSection() {
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Parlons de vos objectifs. Réponse rapide sur WhatsApp ou par email.</p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Link to="/contact" className="btn-gold">Démarrer un projet <ArrowRight className="h-4 w-4" /></Link>
-          <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-outline-gold">Écrire sur WhatsApp</a>
+          <a href={LINKS.whatsapp} className="btn-outline-gold">Écrire sur WhatsApp</a>
         </div>
       </Reveal>
     </section>
