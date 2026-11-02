@@ -2,13 +2,14 @@ import { describe, expect, it } from "vitest";
 import { CATALOGUE_SERVICE, MAIN_SERVICES, NAV, PRICING_NOTICE, PROJECTS, SERVICES, STATS } from "@/lib/site";
 
 describe("Client-supplied portfolio", () => {
-  it("contains only the five supplied website destinations", () => {
+  it("contains only the six supplied website destinations", () => {
     expect(PROJECTS.map((project) => project.url)).toEqual([
       "https://lumia-shooting-portfolio.vercel.app/",
       "https://sagesse-memeton-psi.vercel.app/",
       "https://genie-s1m3.vercel.app/",
       "https://warren-adjovi-two.vercel.app/",
       "https://paradise-abomey.lovable.app/",
+      "https://julio-reel.vercel.app/",
     ]);
   });
 });

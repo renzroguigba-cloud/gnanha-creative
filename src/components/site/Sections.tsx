@@ -113,7 +113,7 @@ export function PortfolioSection({ limit }: { limit?: number }) {
               <article className="card-lux group h-full overflow-hidden">
                 <div className="overflow-hidden">
                   <a href={p.url} target="_blank" rel="noopener noreferrer" aria-label={`Visiter le site ${p.title}`}>
-                    <img src={p.img} alt={`Aperçu du site ${p.title}`} width={1280} height={850} loading="lazy" className="aspect-[1280/850] w-full object-cover transition duration-700 group-hover:scale-105" />
+                    <img src={p.img} alt={`Aperçu du site ${p.title}`} width={1280} height={850} loading="lazy" className="aspect-[1280/850] w-full object-cover object-top transition duration-700 group-hover:scale-105" />
                   </a>
                 </div>
                 <div className="p-6">
