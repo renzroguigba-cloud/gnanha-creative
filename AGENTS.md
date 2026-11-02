@@ -16,3 +16,5 @@
 - Define catalogue pricing, exclusions and delivery conditions in the shared service data so display and rule tests use one source of truth.
 - Derive contact project choices and validation from shared service titles so unsupported services cannot be submitted.
 - Read notification credentials inside the contact server handler and pass them to server-only helpers to preserve runtime secret boundaries.
+- Keep internal page-search ranking in a browser-safe shared module derived from canonical navigation and service/project content so search destinations stay testable.
+- Use the shared project list in the home Embla carousel with manual controls, interaction pause and reduced-motion support so real previews stay consistent and accessible.
