@@ -29,3 +29,12 @@ describe("Owner notifications", () => {
     await expect(notifyOwnerByWhatsApp(lead)).rejects.toThrow("autorisation CallMeBot requise");
   });
 });
+import { whatsappMessage } from "@/lib/notify.server";
+import { it as it2, expect as expect2 } from "vitest";
+it2("formats the owner WhatsApp alert with client details", () => {
+  const m = whatsappMessage({ name: "Cadoshop", email: "a@b.com", phone: "+2290195147035", project_type: "Création de site web vitrine", message: "Je veux un site" });
+  expect2(m).toContain("NOUVEAU PROJET");
+  expect2(m).toContain("*Client :* Cadoshop");
+  expect2(m).toContain("*WhatsApp :* +2290195147035");
+  expect2(m).toContain("*Type :* Création de site web vitrine");
+});

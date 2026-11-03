@@ -9,7 +9,7 @@ const field = "mt-2 w-full rounded-xl border border-input bg-background px-4 py-
 
 export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
-  const [errors, setErrors] = useState<Partial<Record<"name" | "email" | "project_type" | "message", string>>>({});
+  const [errors, setErrors] = useState<Partial<Record<"name" | "email" | "phone" | "project_type" | "message", string>>>({});
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -87,6 +87,11 @@ export function ContactSection() {
               <div>
                 <label htmlFor="company" className="text-sm font-medium">Entreprise</label>
                 <input id="company" name="company" autoComplete="organization" className={field} placeholder="Nom de votre entreprise" />
+              </div>
+              <div>
+                <label htmlFor="phone" className="text-sm font-medium">Numéro WhatsApp</label>
+                <input id="phone" name="phone" type="tel" autoComplete="tel" className={field} placeholder="+229 01 00 00 00 00" aria-invalid={!!errors.phone} aria-describedby="phone-err" />
+                {errors.phone && <p id="phone-err" className="mt-1 text-xs text-destructive">{errors.phone}</p>}
               </div>
               <div>
                 <label htmlFor="project_type" className="text-sm font-medium">Type de projet *</label>

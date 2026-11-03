@@ -10,7 +10,7 @@ export const submitContact = createServerFn({ method: "POST" })
       email: data.email,
       company: data.company || null,
       project_type: data.project_type,
-      message: data.message,
+      message: data.phone ? `${data.message}\n\nWhatsApp : ${data.phone}` : data.message,
     });
     if (error) {
       console.error("contact insert failed", error);
