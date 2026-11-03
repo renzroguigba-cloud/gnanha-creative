@@ -55,7 +55,7 @@ function Index() {
           {MAIN_SERVICES.map((s, i) => (
             <Reveal key={s.title} delay={i * 80}>
               <Link to="/services" className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border p-7 shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1.5 hover:border-primary ${i === 1 ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-foreground"}`}>
-                <span className="absolute right-5 top-4 font-display text-5xl opacity-15" aria-hidden>0{i + 1}</span>
+                <span className="absolute right-5 top-4 text-5xl font-semibold opacity-15" aria-hidden>0{i + 1}</span>
                 <span className={`grid h-14 w-14 place-items-center rounded-full border transition group-hover:rotate-6 ${i === 1 ? "border-primary-foreground/40" : "border-primary/40 text-primary"}`}><s.icon className="h-6 w-6" aria-hidden /></span>
                 <h2 className="mt-6 text-xl font-semibold leading-snug">{s.title}</h2>
                 <p className={`mt-3 text-2xl font-semibold ${i === 1 ? "" : "text-primary"}`}>{s.price}</p>
