@@ -18,6 +18,7 @@ export function Reveal({ children, className, delay = 0 }: { children: ReactNode
     io.observe(el);
     return () => io.disconnect();
   }, []);
+
   return (
     <div ref={ref} className={cn("reveal", className)} style={{ transitionDelay: `${delay}ms` }}>
       {children}
@@ -25,11 +26,23 @@ export function Reveal({ children, className, delay = 0 }: { children: ReactNode
   );
 }
 
-export function SectionHeading({ eyebrow, title, desc, center = true, as: Tag = "h2" }: { eyebrow: string; title: ReactNode; desc?: string; center?: boolean; as?: "h1" | "h2" }) {
+export function SectionHeading({
+  eyebrow,
+  title,
+  desc,
+  center = true,
+  as: Tag = "h2",
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  desc?: string;
+  center?: boolean;
+  as?: "h1" | "h2";
+}) {
   return (
     <Reveal className={cn("max-w-2xl", center && "mx-auto text-center")}>
       <p className="eyebrow">{eyebrow}</p>
-      <Tag className="mt-4 text-3xl font-semibold leading-tight text-gold sm:text-4xl md:text-5xl">{title}</Tag>
+      <Tag className="hero-word mt-4 text-3xl font-semibold leading-[1.05] text-gold sm:text-4xl md:text-5xl">{title}</Tag>
       {desc && <p className="mt-5 text-base leading-relaxed text-muted-foreground">{desc}</p>}
     </Reveal>
   );
