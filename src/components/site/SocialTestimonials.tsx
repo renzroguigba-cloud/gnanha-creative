@@ -1,17 +1,10 @@
 import { MessageCircle, Star, Video } from "lucide-react";
-import { TESTIMONIALS } from "@/lib/site";
-import screenshot from "@/assets/temoignage-warren.jpg.asset.json";
-import video1 from "@/assets/temoignage-client-1.mp4.asset.json";
-import video2 from "@/assets/temoignage-client-2.mp4.asset.json";
-import compatible1 from "@/assets/temoignage-client-1.webm.asset.json";
-import compatible2 from "@/assets/temoignage-client-2.webm.asset.json";
-import poster1 from "@/assets/VID-20260412-WA0032.mp4-poster.jpg.asset.json";
-import poster2 from "@/assets/VID-20260311-WA0073.mp4-poster.jpg.asset.json";
+import { TESTIMONIALS, MEDIA } from "@/lib/site";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const videos = [
-  { video: video1.url, compatible: compatible1.url, poster: poster1.url, title: "Témoignage client · 01" },
-  { video: video2.url, compatible: compatible2.url, poster: poster2.url, title: "Témoignage client · 02" },
+  { video: MEDIA.videos.client1, compatible: MEDIA.videos.client1Webm, poster: MEDIA.videos.poster1, title: "Témoignage client · 01" },
+  { video: MEDIA.videos.client2, compatible: MEDIA.videos.client2Webm, poster: MEDIA.videos.poster2, title: "Témoignage client · 02" },
 ];
 
 export function TestimonialsSection() {
@@ -40,8 +33,8 @@ export function TestimonialsSection() {
         <div className="mx-auto mt-14 grid max-w-5xl items-start gap-6 md:grid-cols-3">
           <Reveal>
             <figure className="overflow-hidden rounded-lg border border-border bg-card">
-              <a href={screenshot.url} target="_blank" rel="noopener noreferrer" aria-label="Voir le témoignage WhatsApp de Warren Adjovi en grand">
-                <img src={screenshot.url} alt="Message WhatsApp de Warren Adjovi remerciant Cadorelle pour son site portfolio professionnel, fluide et fidèle à son image." width={720} height={1179} loading="lazy" className="aspect-[9/16] w-full object-contain" />
+              <a href={MEDIA.projects.testimonialWarren} target="_blank" rel="noopener noreferrer" aria-label="Voir le témoignage WhatsApp de Warren Adjovi en grand">
+                <img src={MEDIA.projects.testimonialWarren} alt="Message WhatsApp de Warren Adjovi remerciant Cadorelle pour son site portfolio professionnel." width={720} height={960} loading="lazy" className="aspect-[3/4] w-full object-cover" />
               </a>
               <figcaption className="flex items-center gap-2 border-t border-border p-4 text-sm text-foreground"><MessageCircle className="h-4 w-4 shrink-0 text-primary" />Warren Adjovi · WhatsApp</figcaption>
             </figure>
@@ -63,3 +56,4 @@ export function TestimonialsSection() {
     </section>
   );
 }
+

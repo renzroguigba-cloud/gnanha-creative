@@ -2,8 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import portrait from "@/assets/cadorelle.jpg.asset.json";
-import { FAQS, LINKS, MAIN_SERVICES, PRICING_NOTICE, PROJECTS, SERVICES, SITE, STATS } from "@/lib/site";
+import { FAQS, LINKS, MAIN_SERVICES, PRICING_NOTICE, PROJECTS, SERVICES, SITE, STATS, MEDIA } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
 export { TestimonialsSection } from "./SocialTestimonials";
@@ -53,7 +52,7 @@ export function AboutSection() {
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
         <Reveal className="relative mx-auto w-full max-w-md">
           <div className="absolute -inset-4 rounded-[2.5rem] border border-primary/40" aria-hidden />
-          <img src={portrait.url} alt={`Portrait de ${SITE.fullName}, créatrice de sites web`} width={736} height={718} loading="lazy" className="relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]" />
+          <img src={MEDIA.portrait} alt={`Portrait de ${SITE.fullName}, créatrice de sites web`} width={736} height={718} loading="lazy" className="relative aspect-[4/5] w-full rounded-[2rem] object-cover" />
           <div className="card-lux absolute -bottom-6 -right-2 px-6 py-4 sm:-right-8">
             <p className="font-display text-3xl text-gold">4 ans</p>
             <p className="text-xs text-muted-foreground">d'expertise web</p>
@@ -63,7 +62,7 @@ export function AboutSection() {
           <p className="eyebrow">À propos</p>
           <h2 id="about-title" className="mt-4 text-3xl font-semibold leading-tight text-gold sm:text-4xl md:text-5xl">Bonjour, je suis Cadorelle.</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">
-            Créatrice de sites web basée à Bohicon, j'aide les entrepreneurs, PME et marques ambitieuses à exister en ligne avec élégance. Depuis 4 ans, je conçois des sites qui allient beauté, clarté et performance — pour que chaque visiteur ait envie de vous faire confiance.
+            Créatrice de sites web basée à Bohicon, j'aide les entrepreneurs, PME et marques ambitieuses à exister en ligne avec élégance. Depuis 4 ans, je conçois des sites qui allient beauté, clarté et conversion.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
@@ -143,7 +142,7 @@ export function ServicesPricingSection() {
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {MAIN_SERVICES.map((s, i) => (
             <Reveal key={s.title} delay={i * 100} className="h-full">
-              <article className="card-lux group relative flex h-full flex-col overflow-hidden p-6 transition duration-500 hover:-translate-y-1.5 hover:border-primary/60 motion-reduce:transform-none motion-reduce:transition-none sm:p-8 lg:p-6">
+              <article className="card-lux group relative flex h-full flex-col overflow-hidden p-6 transition duration-500 hover:-translate-y-1.5 hover:border-primary/60">
                 <div className="flex items-center gap-4">
                   <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-primary/30 bg-accent text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
                     <s.icon className="h-6 w-6" aria-hidden />
@@ -151,7 +150,7 @@ export function ServicesPricingSection() {
                   <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{s.title}</h3>
                 </div>
                 <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-                {"audience" in s && <><h4 className="mt-5 text-base font-semibold text-foreground">Pour qui ?</h4><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.audience}</p><h4 className="mt-5 text-base font-semibold text-foreground">Ce que comprend le service</h4></>}
+                {"audience" in s && <><h4 className="mt-5 text-base font-semibold text-foreground">Pour qui ?</h4><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.audience}</p></>}
                 <ul className="mt-5 space-y-2">
                   {s.highlights.map((h) => (
                     <li key={h} className="flex items-start gap-2 text-sm text-foreground/90"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />{h}</li>
@@ -163,7 +162,7 @@ export function ServicesPricingSection() {
                     <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
                       {s.exclusions.map((item) => <li key={item.key}>{item.label}</li>)}
                     </ul>
-                    <p className="mt-5 text-sm leading-relaxed text-foreground"><strong>Livraison estimée :</strong> {s.delivery.min} à {s.delivery.max} jours ouvrés après réception des informations et des photos nécessaires.</p>
+                    <p className="mt-5 text-sm leading-relaxed text-foreground"><strong>Livraison estimée :</strong> {s.delivery.min} à {s.delivery.max} jours ouvrés après réception des informations et visuels.</p>
                   </div>
                 )}
                 <div className="mt-auto">
@@ -221,3 +220,4 @@ export function CtaSection() {
     </section>
   );
 }
+

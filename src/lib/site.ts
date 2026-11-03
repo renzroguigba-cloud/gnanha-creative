@@ -1,10 +1,33 @@
 import { MonitorSmartphone, ShoppingBag, Briefcase } from "lucide-react";
-import lumia from "@/assets/realisation-lumia.jpg.asset.json";
-import sagesse from "@/assets/realisation-sagesse.jpg.asset.json";
-import genie from "@/assets/realisation-genie.jpg.asset.json";
-import warren from "@/assets/realisation-warren-accueil.jpg.asset.json";
-import paradise from "@/assets/realisation-paradise.jpg.asset.json";
-import julio from "@/assets/realisation-julio.jpg.asset.json";
+
+export const MEDIA = {
+  portrait:
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
+  projects: {
+    lumia:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    sagesse:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    genie:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    warren:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+    paradise:
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+    julio:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+    testimonialWarren:
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
+  },
+  videos: {
+    client1: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    client1Webm: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm",
+    client2: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    client2Webm: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm",
+    poster1: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80",
+    poster2: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+  },
+};
 
 export const SITE = {
   brand: "Cadorelle W.",
@@ -34,9 +57,9 @@ export const NAV = [
 ] as const;
 
 export const SERVICES = [
-  { icon: MonitorSmartphone, title: "Création de site web vitrine", desc: "Un site élégant qui présente votre activité, inspire confiance et transforme vos visiteurs en clients.", benefits: ["Design sur mesure et responsive", "Formulaire de contact & WhatsApp", "Référencement de base inclus"] },
-  { icon: ShoppingBag, title: "Boutique catalogue avec commande WhatsApp", desc: "Présentez vos produits dans un catalogue en ligne clair : vos clients commandent directement sur WhatsApp, sans paiement en ligne.", benefits: ["Catalogue produits organisé", "Commande directe via WhatsApp", "Photos, prix et fiches produits"] },
-  { icon: Briefcase, title: "Portfolio pour marques et entrepreneurs", desc: "Un portfolio professionnel qui met en valeur votre travail et votre image, pour marques, entrepreneurs et entreprises.", benefits: ["Mise en valeur de vos réalisations", "Image premium et crédible", "Parcours pensé pour convaincre"] },
+  { icon: MonitorSmartphone, title: "Création de site web vitrine", desc: "Un site élégant qui présente votre activité, inspire confiance et transforme vos visiteurs en clients.", benefits: ["Design premium et rapide", "Navigation claire", "Conversion orientée client"] },
+  { icon: ShoppingBag, title: "Boutique catalogue avec commande WhatsApp", desc: "Présentez vos produits dans un catalogue en ligne clair : vos clients commandent directement sur WhatsApp, sans friction.", benefits: ["Catalogue organisé", "Commande directe", "Mise en ligne rapide"] },
+  { icon: Briefcase, title: "Portfolio pour marques et entrepreneurs", desc: "Un portfolio professionnel qui met en valeur votre travail et votre image, pour marques, entrepreneurs et entreprises.", benefits: ["Mise en avant de vos projets", "Crédibilité immédiate", "Expérience mobile optimisée"] },
 ];
 
 export const CATALOGUE_SERVICE = {
@@ -44,14 +67,14 @@ export const CATALOGUE_SERVICE = {
   title: "Création de boutique catalogue avec commande par WhatsApp",
   price: "250 € – 2 000 €",
   priceRange: { min: 250, max: 2000, currency: "EUR" },
-  desc: "Présentez vos produits en ligne et recevez vos commandes directement sur WhatsApp. Vous avez une boutique de vêtements, de chaussures, de cosmétiques, de téléphones ou d'autres produits ? Je crée pour vous une boutique catalogue moderne : vos clients découvrent vos articles, consultent les prix et vous contactent facilement pour commander.",
+  desc: "Présentez vos produits en ligne et recevez vos commandes directement sur WhatsApp. Vous avez une boutique de vêtements, de chaussures, de cosmétiques, de téléphones ou d'autres produits.",
   audience: "Pour les commerçants, entrepreneurs et petites entreprises qui souhaitent présenter leurs produits sur Internet sans mettre en place un système de paiement en ligne.",
   highlights: [
-    "Design professionnel : une boutique à l'image de votre activité",
+    "Design professionnel : à l'image de votre activité",
     "Catalogue de produits : photos, noms, prix et descriptions",
     "Organisation par catégories pour retrouver facilement les articles",
     "Fiches produits avec les informations propres à chaque article",
-    "Commande par WhatsApp : contact direct avec le vendeur au sujet du produit choisi",
+    "Commande par WhatsApp : contact direct avec le vendeur",
     "Adaptation au téléphone, à la tablette et à l'ordinateur",
     "Mise en ligne après validation et tests",
   ],
@@ -89,23 +112,22 @@ export const MAIN_SERVICES = [
 ] as const;
 
 export const PRICING_NOTICE =
-  "Les tarifs indiqués couvrent uniquement la création du site web ou du portfolio. Le nom de domaine et l'hébergement web ne sont pas inclus et restent à la charge du client. Ces frais peuvent être souscrits séparément auprès d'un fournisseur.";
+  "Les tarifs indiqués couvrent uniquement la création du site web ou du portfolio. Le nom de domaine et l'hébergement web ne sont pas inclus et restent à la charge du client. Ces frais peuvent varier selon le prestataire d'hébergement et le choix du nom de domaine.";
 
 export const PROJECTS = [
-  { img: lumia.url, title: "LUMÎA Studio", category: "Photographie", desc: "Studio photo : mariages, portraits et photographie corporate.", url: "https://lumia-shooting-portfolio.vercel.app/" },
-  { img: sagesse.url, title: "MemeTon Sagesse", category: "Portfolio · Montage vidéo", desc: "Un portfolio consacré aux Reels, Shorts et TikToks.", url: "https://sagesse-memeton-psi.vercel.app/" },
-  { img: genie.url, title: "CoachVie", category: "Coaching", desc: "Une présence en ligne dédiée au coaching et au développement personnel.", url: "https://genie-s1m3.vercel.app/" },
-  { img: warren.url, title: "Warren Adjovi", category: "Portfolio · Montage vidéo", desc: "Le portfolio d’un monteur vidéo professionnel.", url: "https://warren-adjovi-two.vercel.app/" },
-  { img: paradise.url, title: "Paradise Hotel Abomey", category: "Hôtellerie", desc: "Le site du Paradise Hotel, à Abomey au Bénin.", url: "https://paradise-abomey.lovable.app/" },
-  { img: julio.url, title: "do-REGO Julio", category: "Portfolio · Montage vidéo", desc: "Le portfolio d’un monteur vidéo freelance spécialisé en contenu court et motion design.", url: "https://julio-reel.vercel.app/" },
+  { img: MEDIA.projects.lumia, title: "LUMÎA Studio", category: "Photographie", desc: "Studio photo : mariages, portraits et photographie corporate.", url: "https://lumia-shooting-portfolio.vercel.app/" },
+  { img: MEDIA.projects.sagesse, title: "MemeTon Sagesse", category: "Portfolio · Montage vidéo", desc: "Un portfolio consacré aux Reels, Shorts et TikToks.", url: "https://sagesse-memeton-psi.vercel.app/" },
+  { img: MEDIA.projects.genie, title: "CoachVie", category: "Coaching", desc: "Une présence en ligne dédiée au coaching et au développement personnel.", url: "https://genie-s1m3.vercel.app/" },
+  { img: MEDIA.projects.warren, title: "Warren Adjovi", category: "Portfolio · Montage vidéo", desc: "Le portfolio d’un monteur vidéo professionnel.", url: "https://warren-adjovi-two.vercel.app/" },
+  { img: MEDIA.projects.paradise, title: "Paradise Hotel Abomey", category: "Hôtellerie", desc: "Le site du Paradise Hotel, à Abomey au Bénin.", url: "https://paradise-abomey.lovable.app/" },
+  { img: MEDIA.projects.julio, title: "do-REGO Julio", category: "Portfolio · Montage vidéo", desc: "Le portfolio d’un monteur vidéo freelance spécialisé en contenu court et motion design.", url: "https://example.com/" },
 ];
 
-
 export const FAQS = [
-  { q: "Combien de temps faut-il pour créer un site ?", a: "Comptez 2 à 3 semaines pour un site vitrine. Pour une boutique catalogue avec commande par WhatsApp, la livraison est estimée à 5 à 7 jours ouvrés après réception des informations et des photos nécessaires." },
+  { q: "Combien de temps faut-il pour créer un site ?", a: "Comptez 2 à 3 semaines pour un site vitrine. Pour une boutique catalogue avec commande par WhatsApp, la livraison est estimée à 5 à 7 jours ouvrés après validation des informations et des visuels." },
   { q: "Est-ce que mon site sera adapté aux téléphones ?", a: "Oui. Chaque site est conçu d'abord pour le mobile, puis adapté aux tablettes et ordinateurs." },
   { q: "Comment se déroule le paiement ?", a: "Un acompte est demandé au lancement du projet, le solde à la livraison. Le paiement par Mobile Money est accepté." },
-  { q: "Pourrai-je modifier mon site moi-même ?", a: "Selon les fonctionnalités convenues pour votre site vitrine ou portfolio, une formation peut être prévue. La formule boutique catalogue WhatsApp ne comprend pas d'espace d'administration des produits ni de gestion automatique des stocks." },
+  { q: "Pourrai-je modifier mon site moi-même ?", a: "Selon les fonctionnalités convenues pour votre site vitrine ou portfolio, une formation peut être prévue. La formule boutique catalogue WhatsApp reste simple à gérer." },
   { q: "Travaillez-vous avec des clients hors du Bénin ?", a: "Absolument. Je travaille à distance avec des clients partout en Afrique et dans le monde." },
   { q: "Le référencement Google est-il inclus ?", a: "Toutes les offres incluent les bases du référencement. Une optimisation avancée peut être ajoutée selon votre projet." },
   { q: "Que se passe-t-il après la mise en ligne ?", a: "Je reste disponible pour la maintenance, les mises à jour et l'évolution de votre site." },
@@ -119,16 +141,16 @@ export const STATS = [
 ];
 
 export const TESTIMONIALS = [
-  { name: "Warren Adjovi", role: "Monteur vidéo professionnel", rating: 5, text: "Cadorelle a créé un portfolio professionnel, fluide et parfaitement fidèle à mon image. Je la recommande sans hésiter à tous les créateurs qui veulent être pris au sérieux en ligne." },
-  { name: "Sagesse MemeTon", role: "Monteur vidéo · Reels & TikToks", rating: 5, text: "Mon portfolio met enfin mes vidéos en valeur. Le site est rapide, élégant, et mes clients me contactent directement après l'avoir visité. Un travail remarquable." },
-  { name: "Aurélie Dossou", role: "Fondatrice · LUMÎA Studio", rating: 5, text: "Notre studio photo avait besoin d'une vitrine à la hauteur de nos images. Le résultat est sublime : nos mariés nous trouvent plus facilement et nous font confiance dès la première visite." },
-  { name: "Rodrigue Houngbédji", role: "Directeur · Paradise Hotel Abomey", rating: 5, text: "Le site de notre hôtel reflète enfin le standing de notre établissement. Les demandes de réservation ont nettement augmenté depuis la mise en ligne." },
-  { name: "Grâce Adjakly", role: "Coach en développement personnel", rating: 5, text: "Cadorelle a compris ma vision dès le premier échange. Mon site transmet exactement l'énergie et le professionnalisme que je voulais offrir à mes clients." },
-  { name: "Marcel Agbodan", role: "Restaurateur · Cotonou", rating: 4, text: "Un site vitrine clair et appétissant pour mon restaurant. Le menu, les photos, le contact WhatsApp : tout est simple pour mes clients. Livré dans les délais annoncés." },
-  { name: "Prisca Tossou", role: "Commerçante · Boutique catalogue", rating: 5, text: "Ma boutique catalogue avec commande WhatsApp a changé mon quotidien. Mes clientes parcourent mes articles en ligne et commandent en un message. Simple et efficace." },
-  { name: "Franck Kpomassè", role: "Consultant indépendant", rating: 5, text: "Professionnalisme, écoute et sens du détail. Mon portfolio me donne une crédibilité immédiate auprès de mes prospects, même à l'international." },
-  { name: "Nadège Affolabi", role: "Artisane · Bohicon", rating: 4, text: "Je n'y connaissais rien en sites web. Cadorelle m'a tout expliqué avec patience et m'a livré un site dont je suis fière. Mes créations sont enfin visibles partout." },
-  { name: "Ulrich Sênami", role: "Entrepreneur · E-commerce", rating: 5, text: "De la première discussion à la mise en ligne, tout a été fluide et transparent. Le site est beau, rapide, et l'accompagnement après livraison est un vrai plus." },
+  { name: "Warren Adjovi", role: "Monteur vidéo professionnel", rating: 5, text: "Cadorelle a créé un portfolio professionnel, fluide et parfaitement fidèle à mon image. Je la recommande sans hésiter." },
+  { name: "Sagesse MemeTon", role: "Monteur vidéo · Reels & TikToks", rating: 5, text: "Mon portfolio met enfin mes vidéos en valeur. Le site est rapide, élégant, et mes clients me contactent plus facilement." },
+  { name: "Aurélie Dossou", role: "Fondatrice · LUMÎA Studio", rating: 5, text: "Notre studio photo avait besoin d'une vitrine à la hauteur de nos images. Le résultat est sublime : nos mariages et portraits sont mis en valeur." },
+  { name: "Rodrigue Houngbédji", role: "Directeur · Paradise Hotel Abomey", rating: 5, text: "Le site de notre hôtel reflète enfin le standing de notre établissement. Les demandes de réservation ont augmenté." },
+  { name: "Grâce Adjakly", role: "Coach en développement personnel", rating: 5, text: "Cadorelle a compris ma vision dès le premier échange. Mon site transmet exactement l'énergie et le professionnalisme recherchés." },
+  { name: "Marcel Agbodan", role: "Restaurateur · Cotonou", rating: 4, text: "Un site vitrine clair et appétissant pour mon restaurant. Le menu, les photos, le contact WhatsApp : tout est simple et moderne." },
+  { name: "Prisca Tossou", role: "Commerçante · Boutique catalogue", rating: 5, text: "Ma boutique catalogue avec commande WhatsApp a changé mon quotidien. Mes clientes parcourent mes articles avec plus de facilité." },
+  { name: "Franck Kpomassè", role: "Consultant indépendant", rating: 5, text: "Professionnalisme, écoute et sens du détail. Mon portfolio me donne une cr��dibilité immédiate auprès de mes clients." },
+  { name: "Nadège Affolabi", role: "Artisane · Bohicon", rating: 4, text: "Je n'y connaissais rien en sites web. Cadorelle m'a tout expliqué avec patience et m'a livré un site dont je suis fière." },
+  { name: "Ulrich Sênami", role: "Entrepreneur · E-commerce", rating: 5, text: "De la première discussion à la mise en ligne, tout a été fluide et transparent. Le site est beau, rapide, et orienté conversion." },
 ];
 
 export function pageHead(title: string, description: string, path: string) {
@@ -146,3 +168,4 @@ export function pageHead(title: string, description: string, path: string) {
     links: [{ rel: "canonical", href: path }],
   };
 }
+
