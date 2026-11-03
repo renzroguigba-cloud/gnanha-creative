@@ -1,4 +1,4 @@
-type Lead = { name: string; email: string; company?: string | null | undefined; project_type: string; message: string };
+type Lead = { name: string; email: string; company?: string | null | undefined; phone?: string | null | undefined; project_type: string; message: string };
 
 const OWNER_EMAIL = "waldellecadorelle@gmail.com";
 
@@ -10,6 +10,7 @@ function summary(l: Lead) {
     `Nom : ${l.name}`,
     `Email : ${l.email}`,
     `Entreprise : ${l.company || "—"}`,
+    `WhatsApp : ${l.phone || "—"}`,
     `Type de projet : ${l.project_type}`,
     "",
     "Message :",
@@ -41,10 +42,27 @@ export async function notifyOwnerByGmail(l: Lead, credentials: { lovableKey: str
   }
 }
 
+export function whatsappMessage(l: Lead) {
+  return [
+    "Bonjour Cadorelle !",
+    "",
+    "🚀 *NOUVEAU PROJET*",
+    "",
+    `👤 *Client :* ${l.name}`,
+    ...(l.company ? [`🏢 *Entreprise :* ${l.company}`] : []),
+    `📧 *Email :* ${l.email}`,
+    `📱 *WhatsApp :* ${l.phone || "—"}`,
+    `🗂️ *Type :* ${l.project_type}`,
+    "",
+    "💬 *Message :*",
+    l.message,
+  ].join("\n");
+}
+
 // Free WhatsApp alert via CallMeBot (personal use). Needs CALLMEBOT_API_KEY.
 export async function notifyOwnerByWhatsApp(l: Lead, apiKey?: string) {
   if (!apiKey) throw new Error("Notifications WhatsApp non configurées : autorisation CallMeBot requise.");
-  const text = encodeURIComponent(`Nouvelle demande sur votre site\n\n${summary(l)}`);
+  const text = encodeURIComponent(whatsappMessage(l));
   const res = await fetch(`https://api.callmebot.com/whatsapp.php?phone=2290142554256&text=${text}&apikey=${encodeURIComponent(apiKey)}`);
   if (!res.ok) {
     const body = await res.text();
