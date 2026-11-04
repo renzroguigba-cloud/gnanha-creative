@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckCircle2, Loader2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { submitContact } from "@/lib/contact.functions";
 import { contactSchema, CONTACT_PROJECT_TYPES } from "@/lib/contact.schema";
+import { AnimatedHeading } from "./AnimatedHeading";
 import { Button } from "@/components/ui/button";
 import { LINKS, SITE } from "@/lib/site";
 
@@ -44,7 +45,7 @@ export function ContactSection() {
     <section className="py-16 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-5 lg:px-8">
         <div className="space-y-4 lg:col-span-2">
-          <h2 className="text-3xl text-gold">Parlons de votre projet</h2>
+          <AnimatedHeading>Parlons de votre projet</AnimatedHeading>
           <p className="text-muted-foreground">Le moyen le plus rapide : un message WhatsApp. Je réponds généralement dans la journée.</p>
           {contacts.map((c) => {
             const inner = (

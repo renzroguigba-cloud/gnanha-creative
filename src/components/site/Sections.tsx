@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import portrait from "@/assets/cadorelle.jpg.asset.json";
 import { FAQS, LINKS, MAIN_SERVICES, PRICING_NOTICE, PROJECTS, SERVICES, SITE, STATS } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { AnimatedHeading } from "./AnimatedHeading";
 import { Reveal, SectionHeading } from "./Reveal";
 export { TestimonialsSection } from "./SocialTestimonials";
 
@@ -61,7 +62,7 @@ export function AboutSection() {
         </Reveal>
         <Reveal delay={120}>
           <p className="eyebrow">À propos</p>
-          <h2 id="about-title" className="mt-4 text-3xl font-semibold leading-tight text-gold sm:text-4xl md:text-5xl">Bonjour, je suis Cadorelle.</h2>
+          <AnimatedHeading className="mt-4">Bonjour, je suis Cadorelle.</AnimatedHeading>
           <p className="mt-6 leading-relaxed text-muted-foreground">
             Créatrice de sites web basée à Bohicon, j'aide les entrepreneurs, PME et marques ambitieuses à exister en ligne avec élégance. Depuis 4 ans, je conçois des sites qui allient beauté, clarté et performance — pour que chaque visiteur ait envie de vous faire confiance.
           </p>
@@ -106,7 +107,7 @@ export function PortfolioSection({ limit }: { limit?: number }) {
   return (
     <section className="py-20 md:py-28" aria-labelledby="portfolio-title">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionHeading eyebrow="Portfolio" title="Mes réalisation" />
+        <SectionHeading eyebrow="Portfolio" title="Mes réalisations" />
         <div className={cn("mt-14 grid gap-6 sm:grid-cols-2", list.length === 3 && "lg:grid-cols-3")}>
           {list.map((p, i) => (
             <Reveal key={p.title} delay={i * 90}>
@@ -177,7 +178,7 @@ export function ServicesPricingSection() {
           ))}
         </div>
         <Reveal delay={150} className="mt-8">
-          <p className="mx-auto flex max-w-3xl items-start gap-3 rounded-2xl border border-border bg-card/60 px-5 py-4 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+          <p className="mx-auto flex max-w-3xl items-start gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-xs leading-relaxed text-muted-foreground sm:text-sm">
             <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
             <span><strong className="font-semibold text-foreground">Important :</strong> {PRICING_NOTICE}</span>
           </p>
@@ -210,10 +211,10 @@ export function FaqSection() {
 export function CtaSection() {
   return (
     <section className="px-5 py-20 lg:px-8">
-      <Reveal className="glow-bg mx-auto max-w-5xl rounded-[2rem] border border-primary/30 bg-card px-6 py-14 text-center md:px-16">
-        <h2 className="text-3xl text-gold md:text-5xl">Prête à donner vie à votre projet ?</h2>
+      <Reveal className="glow-bg mx-auto max-w-5xl rounded-[2rem] border border-primary/30 bg-card px-6 py-14 text-left md:px-16">
+        <AnimatedHeading>Prête à donner vie à votre projet ?</AnimatedHeading>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Parlons de vos objectifs. Réponse rapide sur WhatsApp ou par email.</p>
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link to="/contact" className="btn-gold">Démarrer un projet <ArrowRight className="h-4 w-4" /></Link>
           <a href={LINKS.whatsapp} className="btn-outline-gold">Écrire sur WhatsApp</a>
         </div>

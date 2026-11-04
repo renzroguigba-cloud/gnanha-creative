@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NAV, SITE } from "@/lib/site";
@@ -9,7 +10,7 @@ export function Logo() {
     <Link to="/" className="flex items-center gap-2.5" aria-label={`${SITE.brand} — accueil`}>
       <span className="grid h-9 w-9 place-items-center rounded-full bg-primary font-display text-lg font-bold text-primary-foreground">C</span>
       <span className="font-display text-lg font-semibold tracking-wide">
-        Cadorelle<span className="text-primary"> W.</span>
+        Cadorelle<span> W.</span>
       </span>
     </Link>
   );
@@ -26,7 +27,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className={cn("fixed inset-x-0 top-0 z-50 transition-all duration-300", scrolled || open ? "border-b border-border bg-background/90 backdrop-blur-xl" : "bg-transparent")}>
+    <header className={cn("fixed inset-x-0 top-0 z-50 transition-all duration-300", scrolled || open ? "border-b border-border bg-background" : "bg-background")}>
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <Logo />
         <nav aria-label="Navigation principale" className="hidden lg:block">
@@ -42,9 +43,9 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-3">
           <Link to="/contact" className="btn-gold hidden !px-5 !py-2.5 text-sm sm:inline-flex">Démarrer un projet</Link>
-          <button type="button" className="grid h-11 w-11 place-items-center rounded-full border border-border lg:hidden" aria-label={open ? "Fermer le menu" : "Ouvrir le menu"} aria-expanded={open} onClick={() => setOpen(!open)}>
+          <Button variant="outline" type="button" className="grid h-11 w-11 place-items-center rounded-full border border-border lg:hidden" aria-label={open ? "Fermer le menu" : "Ouvrir le menu"} aria-expanded={open} onClick={() => setOpen(!open)}>
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          </Button>
         </div>
       </div>
       {open && (

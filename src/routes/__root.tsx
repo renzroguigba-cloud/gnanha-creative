@@ -96,7 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Gnanha W. Cadorelle — Créatrice de sites web" },
       { name: "description", content: "Création de sites web premium à Bohicon, Bénin." },
       { name: "author", content: "Gnanha W. Cadorelle" },
-      { name: "theme-color", content: "#141210" },
+      { name: "theme-color", content: "#DCEBF7" },
       { property: "og:site_name", content: "Cadorelle W." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -104,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
@@ -141,7 +141,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
-      <a href={LINKS.whatsapp} aria-label="Discuter sur WhatsApp" className="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-[var(--shadow-gold)] transition hover:scale-105">
+      <a href={LINKS.whatsapp} aria-label="Discuter sur WhatsApp" className="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground border border-primary">
         <MessageCircle className="h-6 w-6" />
       </a>
     </QueryClientProvider>
