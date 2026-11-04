@@ -1,4 +1,5 @@
 # Requested updates
+- [ ] Apply sky/night/copper visual overhaul, rebuild home in requested order, preserve all pages/content/media and verify at 375 px and desktop.
 - [x] Home: page keyword search, six-project horizontal carousel, refreshed three-service design; verify navigation and layout.
 - [x] Contact form: rename name field label to « Nom et prénom complet ».
 - [x] WhatsApp link verified working (opens chat with prefilled message); popup blocker in preview was the cause.

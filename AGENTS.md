@@ -17,4 +17,5 @@
 - Derive contact project choices and validation from shared service titles so unsupported services cannot be submitted.
 - Read notification credentials inside the contact server handler and pass them to server-only helpers to preserve runtime secret boundaries.
 - Keep internal page-search ranking in a browser-safe shared module derived from canonical navigation and service/project content so search destinations stay testable.
-- Use the shared project list in the home Embla carousel with manual controls, interaction pause and reduced-motion support so real previews stay consistent and accessible.
+- Derive featured portfolio items from the shared project list; use manual Embla controls and touch swiping without decorative autoplay.
+- Centralize the visual theme in global CSS and use shared animated headings and one-shot counters with reduced-motion support for consistency across pages.
