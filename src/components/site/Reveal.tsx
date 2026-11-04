@@ -11,7 +11,7 @@ export function Reveal({ children, className, delay = 0 }: { children: ReactNode
   );
 }
 
-export function SectionHeading({ eyebrow, title, desc, center = true, as: Tag = "h2" }: { eyebrow: string; title: ReactNode; desc?: string; center?: boolean; as?: "h1" | "h2" }) {
+export function SectionHeading({ eyebrow, title, desc, as: Tag = "h2" }: { eyebrow: string; title: ReactNode; desc?: string; center?: boolean; as?: "h1" | "h2" }) {
   return (
     <Reveal className={cn("section-heading max-w-3xl")}>
       <p className="eyebrow">{eyebrow}</p>

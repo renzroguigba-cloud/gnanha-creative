@@ -55,7 +55,7 @@ export function AboutSection() {
         <Reveal className="relative mx-auto w-full max-w-md">
           <div className="absolute -inset-4 rounded-[2.5rem] border border-primary/40" aria-hidden />
           <img src={portrait.url} alt={`Portrait de ${SITE.fullName}, créatrice de sites web`} width={736} height={718} loading="lazy" className="relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]" />
-          <div className="card-lux absolute -bottom-6 -right-2 px-6 py-4 sm:-right-8">
+          <div className="absolute -bottom-6 -right-2 border border-border bg-card px-6 py-4 sm:-right-8">
             <p className="font-display text-3xl text-gold">4 ans</p>
             <p className="text-xs text-muted-foreground">d'expertise web</p>
           </div>

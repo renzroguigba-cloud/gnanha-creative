@@ -99,6 +99,9 @@
 #main .text-sm,footer .text-sm { font-size: 16px; line-height: 1.6; }
 #main .eyebrow { font-size: 13px !important; }
 #main .text-primary:not(.bg-card *):not(.bg-surface *):not(.card-lux *):not(.bg-accent *) { color: var(--night); }
+#main svg:not(.btn-gold svg):not(.btn-outline-gold svg),footer svg { color: var(--copper); }
+.btn-outline-gold { border-color: var(--foreground); }
+#main .bg-card .text-primary,#main .bg-surface .text-primary,#main .card-lux .text-primary { color: var(--copper); }
 header .text-primary { color: var(--night); }
 #main [class*="hover:-translate"],#main [class*="group-hover:scale"],#main [class*="group-hover:rotate"] { transform: none !important; }
 #main .card-lux:hover { border-color: var(--copper); }
