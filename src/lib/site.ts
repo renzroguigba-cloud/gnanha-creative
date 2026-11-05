@@ -119,17 +119,17 @@ export const STATS = [
 ];
 
 export const TESTIMONIALS = [
-  { name: "Warren Adjovi", role: "Monteur vidéo professionnel", rating: 5, text: "Cadorelle a créé un portfolio professionnel, fluide et parfaitement fidèle à mon image. Je la recommande sans hésiter à tous les créateurs qui veulent être pris au sérieux en ligne." },
-  { name: "Sagesse MemeTon", role: "Monteur vidéo · Reels & TikToks", rating: 5, text: "Mon portfolio met enfin mes vidéos en valeur. Le site est rapide, élégant, et mes clients me contactent directement après l'avoir visité. Un travail remarquable." },
-  { name: "Aurélie Dossou", role: "Fondatrice · LUMÎA Studio", rating: 5, text: "Notre studio photo avait besoin d'une vitrine à la hauteur de nos images. Le résultat est sublime : nos mariés nous trouvent plus facilement et nous font confiance dès la première visite." },
-  { name: "Rodrigue Houngbédji", role: "Directeur · Paradise Hotel Abomey", rating: 5, text: "Le site de notre hôtel reflète enfin le standing de notre établissement. Les demandes de réservation ont nettement augmenté depuis la mise en ligne." },
-  { name: "Grâce Adjakly", role: "Coach en développement personnel", rating: 5, text: "Cadorelle a compris ma vision dès le premier échange. Mon site transmet exactement l'énergie et le professionnalisme que je voulais offrir à mes clients." },
-  { name: "Marcel Agbodan", role: "Restaurateur · Cotonou", rating: 4, text: "Un site vitrine clair et appétissant pour mon restaurant. Le menu, les photos, le contact WhatsApp : tout est simple pour mes clients. Livré dans les délais annoncés." },
-  { name: "Prisca Tossou", role: "Commerçante · Boutique catalogue", rating: 5, text: "Ma boutique catalogue avec commande WhatsApp a changé mon quotidien. Mes clientes parcourent mes articles en ligne et commandent en un message. Simple et efficace." },
-  { name: "Franck Kpomassè", role: "Consultant indépendant", rating: 5, text: "Professionnalisme, écoute et sens du détail. Mon portfolio me donne une crédibilité immédiate auprès de mes prospects, même à l'international." },
-  { name: "Nadège Affolabi", role: "Artisane · Bohicon", rating: 4, text: "Je n'y connaissais rien en sites web. Cadorelle m'a tout expliqué avec patience et m'a livré un site dont je suis fière. Mes créations sont enfin visibles partout." },
-  { name: "Ulrich Sênami", role: "Entrepreneur · E-commerce", rating: 5, text: "De la première discussion à la mise en ligne, tout a été fluide et transparent. Le site est beau, rapide, et l'accompagnement après livraison est un vrai plus." },
-];
+  { id: 1, kind: "example", text: "Mon activité est présentée avec clarté. Le site reflète l’image professionnelle que je souhaitais donner." },
+  { id: 2, kind: "example", text: "Mes réalisations ont enfin leur place dans un portfolio organisé et agréable à parcourir." },
+  { id: 3, kind: "example", text: "Le catalogue permet de consulter les produits et leurs prix, puis de me contacter directement sur WhatsApp." },
+  { id: 4, kind: "example", text: "J’ai apprécié l’écoute et les échanges autour de mes besoins, du premier contact à la livraison." },
+  { id: 5, kind: "example", text: "La présentation sur téléphone est soignée. Les informations importantes sont faciles à retrouver." },
+  { id: 6, kind: "example", text: "Les photos et les descriptions de mon activité sont mises en valeur sans compliquer la navigation." },
+  { id: 7, kind: "example", text: "Mon portfolio réunit mes projets, mes compétences et mes coordonnées dans un ensemble cohérent." },
+  { id: 8, kind: "example", text: "Les étapes du projet étaient claires et j’ai pu donner mon avis avant la mise en ligne." },
+  { id: 9, kind: "example", text: "Le site correspond à l’univers de ma marque, avec une présentation simple et professionnelle." },
+  { id: 10, kind: "example", text: "Les moyens de contact sont accessibles. Mes visiteurs peuvent me parler de leur projet facilement." },
+] as const;
 
 export function pageHead(title: string, description: string, path: string) {
   const full = `${title} | ${SITE.fullName}`;
