@@ -66,7 +66,7 @@
 .section-space { padding-block: 64px; }
 .section-heading { text-align: left; }
 .animated-heading { font-size: 2.4rem; line-height: 1.15; font-weight: 500; }
-.heading-word { display: inline-block; opacity: 0; transform: translateY(16px); transition: opacity 400ms ease-out, transform 400ms ease-out; }
+.heading-word { display: inline-block; max-width: 100%; overflow-wrap: anywhere; opacity: 0; transform: translateY(16px); transition: opacity 400ms ease-out, transform 400ms ease-out; }
 .heading-visible .heading-word { opacity: 1; transform: none; }
 .heading-keyword { position: relative; font-weight: inherit; }
 .heading-keyword::after { position: absolute; content: ""; left: 0; right: 0; bottom: -5px; height: 1px; background: var(--copper); transform: scaleX(0); transform-origin: left; transition: transform 500ms ease-out 650ms; }
@@ -83,7 +83,7 @@
 .stat-item { display: flex; align-items: center; gap: 20px; }
 .stat-number { font: 500 2.5rem/1 var(--font-display); color: var(--copper); white-space: nowrap; }
 .stat-item span { max-width: 150px; }
-.home-service { border: 1px solid var(--border); border-radius: 4px; padding: 28px; display: flex; flex-direction: column; }
+.home-service { min-width: 0; overflow-wrap: anywhere; border: 1px solid var(--border); border-radius: 4px; padding: 28px; display: flex; flex-direction: column; }
 .home-service:hover,.home-service:focus-within,.home-service:active { border-color: var(--copper); }
 .home-service .btn-gold { margin-top: auto; }
 .home-service .service-price { padding-bottom: 24px; font: 500 2rem/1.2 var(--font-display); color: var(--night); }
@@ -105,6 +105,7 @@
 #main .eyebrow { font-size: 13px !important; }
 #main .text-primary:not(.bg-card *):not(.bg-surface *):not(.card-lux *):not(.bg-accent *) { color: var(--night); }
 #main svg:not(.btn-gold svg):not(.btn-outline-gold svg),footer svg { color: var(--copper); }
+#main button svg,#main a.bg-primary svg { color: var(--night); }
 .btn-outline-gold { border-color: var(--copper); }
 #main .bg-card .text-primary,#main .bg-surface .text-primary,#main .card-lux .text-primary { color: var(--night); }
 header .text-primary { color: var(--night); }
@@ -126,6 +127,8 @@ header { background: var(--sky); border-bottom: 1px solid var(--border); }
   .featured-rail > * { flex-basis: calc((100% - 48px)/3); }
 }
 @media (max-width: 767px) {
+  .home-service { padding: 24px; }
+  .home-service .btn-gold { padding-inline: 12px; }
   .process-line { border-top: 0; border-left: 1px solid var(--copper); padding-top: 0; padding-left: 24px; }
   .hero-portrait { max-width: 340px; }
   .home-hero .animated-heading { font-size: 2.4rem; }
