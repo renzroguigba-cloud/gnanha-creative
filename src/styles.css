@@ -38,6 +38,7 @@
   button,input,select,textarea { font: inherit; }
   svg { stroke-width: 1.5; }
 }
+#main { overflow-x: clip; }
 /* All content shares the sky background; only the compact stats band is dark. */
 .bg-card,.bg-surface,.card-lux,.bg-accent { --foreground: var(--night); --muted-foreground: var(--night); color: var(--night); }
 .bg-background { --foreground: var(--night); --muted-foreground: var(--night); color: var(--night); }
