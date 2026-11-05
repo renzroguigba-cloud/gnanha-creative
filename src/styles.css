@@ -105,7 +105,7 @@
 #main .eyebrow { font-size: 13px !important; }
 #main .text-primary:not(.bg-card *):not(.bg-surface *):not(.card-lux *):not(.bg-accent *) { color: var(--night); }
 #main svg:not(.btn-gold svg):not(.btn-outline-gold svg),footer svg { color: var(--copper); }
-#main button svg,#main a.bg-primary svg { color: var(--night); }
+#main button svg,#main a.bg-primary svg { color: var(--night) !important; }
 .btn-outline-gold { border-color: var(--copper); }
 #main .bg-card .text-primary,#main .bg-surface .text-primary,#main .card-lux .text-primary { color: var(--night); }
 header .text-primary { color: var(--night); }
