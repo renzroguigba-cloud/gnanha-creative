@@ -19,3 +19,4 @@
 - Keep internal page-search ranking in a browser-safe shared module derived from canonical navigation and service/project content so search destinations stay testable.
 - Derive featured portfolio items from the shared project list; use manual Embla controls and touch swiping without decorative autoplay.
 - Centralize the visual theme in global CSS and use shared animated headings and one-shot counters with reduced-motion support for consistency across pages.
+- Keep example comments explicitly marked in shared data and displayed separately from authentic testimonial media; use manual Embla controls for both rails to prevent invented endorsements and autoplay.
