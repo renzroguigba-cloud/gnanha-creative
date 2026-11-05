@@ -211,7 +211,7 @@ export function FaqSection() {
 export function CtaSection() {
   return (
     <section className="px-5 py-20 lg:px-8">
-      <Reveal className="glow-bg mx-auto max-w-5xl rounded-[2rem] border border-primary/30 bg-card px-6 py-14 text-left md:px-16">
+      <Reveal className="mx-auto max-w-5xl py-14 text-left">
         <AnimatedHeading>Prête à donner vie à votre projet ?</AnimatedHeading>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Parlons de vos objectifs. Réponse rapide sur WhatsApp ou par email.</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">

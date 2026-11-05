@@ -1,5 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { CATALOGUE_SERVICE, MAIN_SERVICES, NAV, PRICING_NOTICE, PROJECTS, SERVICES, STATS } from "@/lib/site";
+import { CATALOGUE_SERVICE, MAIN_SERVICES, NAV, PRICING_NOTICE, PROJECTS, SERVICES, STATS, TESTIMONIALS } from "@/lib/site";
+
+describe("Example comments", () => {
+  it("contains ten samples without invented client identities", () => {
+    expect(TESTIMONIALS).toHaveLength(10);
+    for (const item of TESTIMONIALS) {
+      expect(item.kind).toBe("example");
+      expect(item).not.toHaveProperty("name");
+    }
+  });
+});
 
 describe("Client-supplied portfolio", () => {
   it("contains only the six supplied website destinations", () => {
