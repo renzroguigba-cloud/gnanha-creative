@@ -2,13 +2,11 @@ import { describe, expect, it } from "vitest";
 import { CATALOGUE_SERVICE, MAIN_SERVICES, NAV, PRICING_NOTICE, PROJECTS, SERVICES, STATS } from "@/lib/site";
 import { WRITTEN_TESTIMONIALS } from "@/lib/testimonials";
 
-describe("Example comments", () => {
-  it("contains ten samples without invented client identities", () => {
-    expect(TESTIMONIALS).toHaveLength(10);
-    for (const item of TESTIMONIALS) {
-      expect(item.kind).toBe("example");
-      expect(item).not.toHaveProperty("name");
-    }
+describe("Written testimonials", () => {
+  it("has ten placeholders with unique initials, flagged for replacement", () => {
+    expect(WRITTEN_TESTIMONIALS).toHaveLength(10);
+    expect(WRITTEN_TESTIMONIALS.every((t) => t.isPlaceholder)).toBe(true);
+    expect(new Set(WRITTEN_TESTIMONIALS.map((t) => t.name[0])).size).toBe(10);
   });
 });
 
