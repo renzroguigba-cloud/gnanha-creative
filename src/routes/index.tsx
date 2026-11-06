@@ -18,7 +18,7 @@ function Index() {
       <div className="site-container hero-layout">
         <div className="hero-copy">
           <p className="eyebrow">Créatrice de sites web · {SITE.city}</p>
-          <AnimatedHeading as="h1" keyword="professionnel," className="mt-6">Votre site web professionnel, pensé pour attirer vos clients</AnimatedHeading>
+          <AnimatedHeading as="h1" keyword="professionnel" className="mt-6">Votre site web professionnel pensé pour attirer vos clients</AnimatedHeading>
           <p className="mt-8 max-w-xl">Je suis {SITE.fullName} : 4 ans d'expérience, 50+ projets livrés, 95 % de clients satisfaits.</p>
           <div className="mt-8 flex flex-wrap gap-4"><Button asChild className="btn-gold"><Link to="/contact">Démarrer un projet<ArrowRight /></Link></Button><Button asChild variant="outline" className="btn-outline-gold"><Link to="/realisations">Voir mes réalisations</Link></Button></div>
         </div>
