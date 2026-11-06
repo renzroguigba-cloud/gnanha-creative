@@ -21,8 +21,8 @@
   --radius: 4px; --background: var(--sky); --foreground: var(--night);
   --card: var(--sky); --card-foreground: var(--night); --surface: var(--sky);
   --popover: var(--sky); --popover-foreground: var(--night);
-  --primary: var(--copper); --primary-foreground: var(--night);
-  --secondary: var(--copper); --secondary-foreground: var(--night);
+  --primary: var(--night); --primary-foreground: var(--sky);
+  --secondary: var(--night); --secondary-foreground: var(--sky);
   --muted: var(--sky); --muted-foreground: var(--night);
   --accent: var(--sky); --accent-foreground: var(--night);
   --destructive: var(--night); --destructive-foreground: var(--sky);
@@ -47,14 +47,14 @@
 @utility btn-gold {
   display: inline-flex; align-items: center; justify-content: center; gap: .65rem; min-height: 48px; height: auto;
   border: 1px solid var(--copper); border-radius: 4px; padding: .75rem 1.3rem; font-size: 16px; font-weight: 600;
-  background: var(--copper); color: var(--night); box-shadow: none; white-space: normal;
-  &:hover { background: var(--copper); text-decoration: underline; text-underline-offset: 4px; }
+  background: var(--night); color: var(--sky); box-shadow: none; white-space: normal; border-color: var(--night); transition: transform 200ms ease-out, background-color 200ms ease-out;
+  &:hover { transform: translateY(-2px); background: color-mix(in srgb, var(--night) 88%, var(--sky)); }
 }
 @utility btn-outline-gold {
   display: inline-flex; align-items: center; justify-content: center; gap: .65rem; min-height: 48px; height: auto;
   border: 1px solid var(--copper); border-radius: 4px; padding: .75rem 1.3rem; font-size: 16px; font-weight: 600;
-  background: var(--copper); color: var(--night); white-space: normal;
-  &:hover { text-decoration: underline; text-underline-offset: 4px; }
+  background: transparent; color: var(--night); white-space: normal; border-color: var(--night); transition: transform 200ms ease-out, background-color 200ms ease-out, color 200ms ease-out;
+  &:hover { transform: translateY(-2px); background: var(--night); color: var(--sky); }
 }
 @utility card-lux { background: var(--sky); border: 1px solid var(--border); border-radius: 4px; box-shadow: none; }
 @utility eyebrow {
@@ -106,8 +106,12 @@
 #main .eyebrow { font-size: 13px !important; }
 #main .text-primary:not(.bg-card *):not(.bg-surface *):not(.card-lux *):not(.bg-accent *) { color: var(--night); }
 #main svg:not(.btn-gold svg):not(.btn-outline-gold svg),footer svg { color: var(--copper); }
-#main button svg,#main a.bg-primary svg { color: var(--night) !important; }
-.btn-outline-gold { border-color: var(--copper); }
+#main button svg,#main a.bg-primary svg,#main .btn-gold svg { color: var(--sky) !important; }
+#main .btn-outline-gold svg { color: currentColor !important; }
+.btn-outline-gold { border-color: var(--night); }
+#main button svg,#main a svg { transition: transform 200ms ease-out; }
+#main button:hover svg,#main a:hover > svg { transform: translateX(3px); }
+.home-hero h1 .heading-keyword::after { display: none; }
 #main .bg-card .text-primary,#main .bg-surface .text-primary,#main .card-lux .text-primary { color: var(--night); }
 header .text-primary { color: var(--night); }
 #main [class*="hover:-translate"],#main [class*="group-hover:scale"],#main [class*="group-hover:rotate"] { transform: none !important; }
