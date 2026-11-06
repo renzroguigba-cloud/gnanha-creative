@@ -12,13 +12,13 @@ export const SITE = {
   slogan: "Des sites web élégants qui font grandir votre marque.",
   city: "Bohicon, Bénin",
   email: "waldellecadorelle@gmail.com",
-  phoneDisplay: "+229 01 42 55 42 56",
-  phoneTel: "+2290142554256",
+  phoneDisplay: "+229 01 42 55 41 56",
+  phoneTel: "+2290142554156",
 };
 
 const waText = encodeURIComponent("Bonjour Cadorelle, je souhaite discuter d'un projet de site web.");
 export const LINKS = {
-  whatsapp: `https://wa.me/2290142554256?text=${waText}`,
+  whatsapp: `https://wa.me/2290142554156?text=${waText}`,
   gmail: `https://mail.google.com/mail/?view=cm&fs=1&to=${SITE.email}&su=${encodeURIComponent("Nouveau projet de site web")}`,
   mailto: `mailto:${SITE.email}?subject=${encodeURIComponent("Nouveau projet de site web")}`,
   tel: `tel:${SITE.phoneTel}`,
@@ -118,18 +118,6 @@ export const STATS = [
   { value: "100%", label: "Accompagnement personnalisé" },
 ];
 
-export const TESTIMONIALS = [
-  { id: 1, kind: "example", text: "Mon activité est présentée avec clarté. Le site reflète l’image professionnelle que je souhaitais donner." },
-  { id: 2, kind: "example", text: "Mes réalisations ont enfin leur place dans un portfolio organisé et agréable à parcourir." },
-  { id: 3, kind: "example", text: "Le catalogue permet de consulter les produits et leurs prix, puis de me contacter directement sur WhatsApp." },
-  { id: 4, kind: "example", text: "J’ai apprécié l’écoute et les échanges autour de mes besoins, du premier contact à la livraison." },
-  { id: 5, kind: "example", text: "La présentation sur téléphone est soignée. Les informations importantes sont faciles à retrouver." },
-  { id: 6, kind: "example", text: "Les photos et les descriptions de mon activité sont mises en valeur sans compliquer la navigation." },
-  { id: 7, kind: "example", text: "Mon portfolio réunit mes projets, mes compétences et mes coordonnées dans un ensemble cohérent." },
-  { id: 8, kind: "example", text: "Les étapes du projet étaient claires et j’ai pu donner mon avis avant la mise en ligne." },
-  { id: 9, kind: "example", text: "Le site correspond à l’univers de ma marque, avec une présentation simple et professionnelle." },
-  { id: 10, kind: "example", text: "Les moyens de contact sont accessibles. Mes visiteurs peuvent me parler de leur projet facilement." },
-] as const;
 
 export function pageHead(title: string, description: string, path: string) {
   const full = `${title} | ${SITE.fullName}`;

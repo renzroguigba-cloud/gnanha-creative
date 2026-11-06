@@ -83,7 +83,7 @@ const jsonLd = {
   name: "Gnanha W. Cadorelle — Création de sites web",
   description: "Création de sites web premium, branding et UX/UI design.",
   email: "waldellecadorelle@gmail.com",
-  telephone: "+2290142554256",
+  telephone: "+2290142554156",
   address: { "@type": "PostalAddress", addressLocality: "Bohicon", addressCountry: "BJ" },
   areaServed: "Bénin",
 };

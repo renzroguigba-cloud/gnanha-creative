@@ -63,7 +63,7 @@ export function whatsappMessage(l: Lead) {
 export async function notifyOwnerByWhatsApp(l: Lead, apiKey?: string) {
   if (!apiKey) throw new Error("Notifications WhatsApp non configurées : autorisation CallMeBot requise.");
   const text = encodeURIComponent(whatsappMessage(l));
-  const res = await fetch(`https://api.callmebot.com/whatsapp.php?phone=2290142554256&text=${text}&apikey=${encodeURIComponent(apiKey)}`);
+  const res = await fetch(`https://api.callmebot.com/whatsapp.php?phone=2290142554156&text=${text}&apikey=${encodeURIComponent(apiKey)}`);
   if (!res.ok) {
     const body = await res.text();
     console.error(`WhatsApp ${res.status}: ${body}`);
