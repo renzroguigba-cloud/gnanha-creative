@@ -19,7 +19,7 @@ describe("Contact destinations and services", () => {
     expect(contactSchema.safeParse({ ...lead, project_type }).success).toBe(false);
   });
   it("opens the owner's WhatsApp number", () => {
-    expect(new URL(LINKS.whatsapp).pathname).toBe("/2290142554256");
+    expect(new URL(LINKS.whatsapp).pathname).toBe("/2290142554156");
   });
   it("opens Gmail composition addressed to the owner", () => {
     expect(new URL(LINKS.gmail).searchParams.get("to")).toBe("waldellecadorelle@gmail.com");

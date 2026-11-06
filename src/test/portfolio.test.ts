@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { CATALOGUE_SERVICE, MAIN_SERVICES, NAV, PRICING_NOTICE, PROJECTS, SERVICES, STATS, TESTIMONIALS } from "@/lib/site";
+import { CATALOGUE_SERVICE, MAIN_SERVICES, NAV, PRICING_NOTICE, PROJECTS, SERVICES, STATS } from "@/lib/site";
+import { WRITTEN_TESTIMONIALS } from "@/lib/testimonials";
 
 describe("Example comments", () => {
   it("contains ten samples without invented client identities", () => {

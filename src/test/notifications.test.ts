@@ -22,7 +22,7 @@ describe("Owner notifications", () => {
     vi.stubGlobal("fetch", fetchMock);
     await notifyOwnerByWhatsApp(lead, "test-only");
     const url = new URL(fetchMock.mock.calls[0]?.[0]);
-    expect(url.searchParams.get("phone")).toBe("2290142554256");
+    expect(url.searchParams.get("phone")).toBe("2290142554156");
     for (const value of Object.values(lead)) expect(url.searchParams.get("text")).toContain(value);
   });
   it("does not silently claim WhatsApp is configured without the owner's key", async () => {

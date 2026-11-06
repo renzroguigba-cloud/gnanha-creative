@@ -12,13 +12,13 @@ export const SITE = {
   slogan: "Des sites web élégants qui font grandir votre marque.",
   city: "Bohicon, Bénin",
   email: "waldellecadorelle@gmail.com",
-  phoneDisplay: "+229 01 42 55 42 56",
-  phoneTel: "+2290142554256",
+  phoneDisplay: "+229 01 42 55 41 56",
+  phoneTel: "+2290142554156",
 };
 
 const waText = encodeURIComponent("Bonjour Cadorelle, je souhaite discuter d'un projet de site web.");
 export const LINKS = {
-  whatsapp: `https://wa.me/2290142554256?text=${waText}`,
+  whatsapp: `https://wa.me/2290142554156?text=${waText}`,
   gmail: `https://mail.google.com/mail/?view=cm&fs=1&to=${SITE.email}&su=${encodeURIComponent("Nouveau projet de site web")}`,
   mailto: `mailto:${SITE.email}?subject=${encodeURIComponent("Nouveau projet de site web")}`,
   tel: `tel:${SITE.phoneTel}`,
