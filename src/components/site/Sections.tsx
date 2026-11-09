@@ -91,9 +91,9 @@ export function StatsSection() {
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-5 md:grid-cols-4 lg:px-8">
         {STATS.map((s, i) => (
           <Reveal key={s.label} delay={i * 80}>
-            <div className="card-lux p-6 text-center md:p-8">
-              <p className="font-display text-4xl font-semibold text-gold md:text-5xl">{s.value}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+            <div className="card-lux min-w-0 p-4 text-center md:p-8">
+              <p className="font-display text-3xl font-semibold text-gold sm:text-4xl md:text-5xl">{s.value}</p>
+              <p className="mt-2 text-sm text-muted-foreground [overflow-wrap:anywhere] hyphens-auto">{s.label}</p>
             </div>
           </Reveal>
         ))}
