@@ -5,6 +5,7 @@ import genie from "@/assets/realisation-genie.jpg.asset.json";
 import warren from "@/assets/realisation-warren-accueil.jpg.asset.json";
 import paradise from "@/assets/realisation-paradise.jpg.asset.json";
 import julio from "@/assets/realisation-julio.jpg.asset.json";
+import andy from "@/assets/realisation-andy.jpg.asset.json";
 
 export const SITE = {
   brand: "Cadorelle W.",
@@ -98,6 +99,7 @@ export const PROJECTS = [
   { img: warren.url, title: "Warren Adjovi", category: "Portfolio · Montage vidéo", desc: "Le portfolio d’un monteur vidéo professionnel.", url: "https://warren-adjovi-two.vercel.app/" },
   { img: paradise.url, title: "Paradise Hotel Abomey", category: "Hôtellerie", desc: "Le site du Paradise Hotel, à Abomey au Bénin.", url: "https://paradise-abomey.lovable.app/" },
   { img: julio.url, title: "do-REGO Julio", category: "Portfolio · Montage vidéo", desc: "Le portfolio d’un monteur vidéo freelance spécialisé en contenu court et motion design.", url: "https://julio-reel.vercel.app/" },
+  { img: andy.url, title: "Andy do-REGO", category: "Portfolio · Montage vidéo", desc: "Le portfolio d’un monteur vidéo freelance disponible en remote.", url: "https://andy-rego-showcase.vercel.app/" },
 ];
 
 

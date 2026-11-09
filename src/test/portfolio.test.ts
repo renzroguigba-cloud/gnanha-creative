@@ -11,7 +11,7 @@ describe("Written testimonials", () => {
 });
 
 describe("Client-supplied portfolio", () => {
-  it("contains only the six supplied website destinations", () => {
+  it("contains only the seven supplied website destinations", () => {
     expect(PROJECTS.map((project) => project.url)).toEqual([
       "https://lumia-shooting-portfolio.vercel.app/",
       "https://sagesse-memeton-psi.vercel.app/",
@@ -19,6 +19,7 @@ describe("Client-supplied portfolio", () => {
       "https://warren-adjovi-two.vercel.app/",
       "https://paradise-abomey.lovable.app/",
       "https://julio-reel.vercel.app/",
+      "https://andy-rego-showcase.vercel.app/",
     ]);
   });
 });
