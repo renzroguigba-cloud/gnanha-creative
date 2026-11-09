@@ -147,3 +147,6 @@ header { background: var(--sky); border-bottom: 1px solid var(--border); }
   .heading-word { opacity: 1; transform: none; }
   .heading-keyword::after { transform: scaleX(1); }
 }
+/* No underlines anywhere on the site. */
+.heading-keyword::after { display: none !important; }
+a, a:hover, button, button:hover, u, ins { text-decoration: none !important; }
